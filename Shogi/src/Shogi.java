@@ -1,6 +1,35 @@
 //feel free to import whatever you need
 public class Shogi {
-	private char [] position = new char[81+14]; //81 board spaces and 14 counters for captured pieces
+	private byte [] position = new byte[81+14]; //81 board spaces and 14 counters for captured pieces
+	// 0 = empty space
+	// 1 = white l
+	// 2 = white L
+	// 3 = white n
+	// 4 = white N
+	// 5 = white s
+	// 6 = white G
+	// 7 = white g
+	// 8 = white k
+	// 9 = white r
+	//10 = white R
+	//11 = white b
+	//12 = white B
+	//13 = white p
+	//14 = white T
+	//15 = black l
+	//16 = black L
+	//17 = black n
+	//18 = black N
+	//19 = black s
+	//20 = black G
+	//21 = black g
+	//22 = black k
+	//23 = black r
+	//24 = black R
+	//25 = black b
+	//26 = black B
+	//27 = black p
+	//28 = black T
 	private char [] layout = new char[30*77]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
 	private String [] table; //dimensions will change as moves are made and width should remain at 22
 	private int moves; //counter for the amount of moves made
