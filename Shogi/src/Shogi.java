@@ -37,7 +37,7 @@ public class Shogi {
 	public Shogi() {
 		//default constructor will initialize the settings for a new game
 		//one way to do this in ASCII is to follow this layout:
-		//              1     2     3     4     5     6     7     8     9
+		//              9     8     7     6     5     4     3     2     1
 		// _______    _____________________________________________________
 		//|       |  |  l  |  n  |  s  |  g  |  k  |  g  |  s  |  n  |  l  |
 		//|       | 1|  v  |  v  |  v  |  v  |  v  |  v  |  v  |  v  |  v  |1
@@ -66,7 +66,7 @@ public class Shogi {
 		//           |  ^  |  ^  |  ^  |  ^  |  ^  |  ^  |  ^  |  ^  |  ^  |  |       |
 		//          9|  l  |  n  |  s  |  g  |  k  |  g  |  s  |  n  |  l  |9 |       |
 		//           |_____|_____|_____|_____|_____|_____|_____|_____|_____|  |_______|
-		//              1     2     3     4     5     6     7     8     9
+		//              9     8     7     6     5     4     3     2     1
 		//the box to hold captured pieces can look like this later in the game:
 		// _______
 		//|lnsgrbp|
