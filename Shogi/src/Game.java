@@ -99,19 +99,28 @@ public class Game {
 		//Str
 		String currentMove;
 		boolean running = true;
+
+		//Keeps track of how many turns have gone by.
+		int turns;
 		while(running){
 
 			shogi.drawBoard();
 
-			System.out.print("Please enter your move: ");
+			System.out.print("Please enter your move (Enter 'Moves' to show list of moves): ");
 			currentMove = s.nextLine();
 
-			//add current move to the move stack, can be used to implement an undo function later on
-			moveList.push(currentMove);
+			//let user enter command to show list of moves
+			if(currentMove.equals("Moves") || currentMove.equals("moves")){
+				shogi.drawTable();
+			}
+			else{
+				//add current move to the move stack, can be used to implement an undo function later on
+				moveList.push(currentMove);
 
-			//Calls the makeMove method, if the move is not legal it let user know
-			if(!shogi.makeMove(currentMove)){
-				System.out.println("Sorry, that is not a legal move!");
+				//Calls the makeMove method, if the move is not legal it let user know
+				if(!shogi.makeMove(currentMove)){
+					System.out.println("Sorry, that is not a legal move!");
+				}
 			}
 
 			//check if game should continue running
