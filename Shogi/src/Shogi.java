@@ -88,7 +88,6 @@ public class Shogi {
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
 		//lastly, the player chose to promote it
 		//if the move is legal, then update the position array and return true
-		//minimizing the computation time of this method is important for a good AI
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
 		return true;
 	}
