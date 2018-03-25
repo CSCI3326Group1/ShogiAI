@@ -82,7 +82,7 @@ public class Shogi {
 		//since makeMove shouldn't update the layout, you need to combine information from the layout and position arrays
 	}
 	public boolean makeMove(String move) {
-		//current plan is to use the Kitao–Kawasaki notation since it appears to be the easiest to translate into a programming language
+		//current plan is to use the notation since it appears to be the easiest to translate into a programming language
 		//we will use the western system
 		//for example: move = "S72x83+"
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
@@ -90,6 +90,7 @@ public class Shogi {
 		//if the move is legal, then update the position array and return true
 		//minimizing the computation time of this method is important for a good AI
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
+		return true;
 	}
 	public void updateTable(String move, int time1, int time2) {
 		//this is separate from makeMove because makeMove needs to be fast for AI
@@ -112,5 +113,6 @@ public class Shogi {
 	}
 	public boolean gameOver() {
 		//returns true when the game is over
+		return false;
 	}
 }
