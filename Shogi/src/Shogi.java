@@ -1,6 +1,6 @@
 //feel free to import whatever you need
 public class Shogi {
-	private byte [] position = new byte[81+14]; //81 board spaces and 14 counters for captured pieces
+	private byte [] position = new byte[81+14+1]; //81 board spaces, 14 counters for captured pieces, and position of last move
 	// 0 = empty space
 	// 1 = white l
 	// 2 = white L
@@ -88,7 +88,6 @@ public class Shogi {
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
 		//lastly, the player chose to promote it
 		//if the move is legal, then update the position array and return true
-		//minimizing the computation time of this method is important for a good AI
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
 	}
 	public void updateTable(String move, int time1, int time2) {
