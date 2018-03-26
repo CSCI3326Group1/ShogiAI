@@ -174,13 +174,13 @@ public class Shogi {
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
 		return true;
 	}
-	public void updateTable(String move, int time1, int time2) {
+	public void updateTable(String move) {
 
 
 		//this is separate from makeMove because makeMove needs to be fast for AI
 		//the main method will provide the arguments
 	}
-	public void drawTable() {
+	public void drawTable(String time1, String time2) {
 		//in the main method, let the player be able to call drawTable() through a command
 		//the table can keep track of time and moves
 		//here is an example:
@@ -194,6 +194,9 @@ public class Shogi {
 		//|5.   R28x24  P*23   |
 		//|____________________|
 		//feel free to improve the design if you want
+		System.out.println(" ________________________");
+		System.out.println("|\t" + time1 + " " + time2 + "|");
+		System.out.println("|________________________|");
 	}
 	public boolean gameOver() {
 		//returns true when the game is over

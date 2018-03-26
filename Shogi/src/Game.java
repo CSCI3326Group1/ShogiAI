@@ -10,6 +10,8 @@
 // import static org.lwjgl.system.MemoryUtil.*;
 import java.util.Stack;
 import java.util.Scanner;
+import org.apache.commons.lang3.*;
+import org.apache.commons.lang3.time.StopWatch;
 
 public class Game {
 
@@ -96,6 +98,10 @@ public class Game {
 			// glfwPollEvents();
 		System.out.println("Welcome to Shogi!");
 
+		//stopwatch
+		StopWatch playerOne = new StopWatch();
+		StopWatch playerTwo = new StopWatch();
+		playerOne.start();
 		//Str
 		String currentMove;
 		boolean running = true;
@@ -111,7 +117,7 @@ public class Game {
 
 			//let user enter command to show list of moves
 			if(currentMove.equals("Moves") || currentMove.equals("moves")){
-				shogi.drawTable();
+				shogi.drawTable(playerOne.toString().substring(0, 8), playerTwo.toString().substring(0, 8));
 			}
 			else{
 				//add current move to the move stack, can be used to implement an undo function later on
@@ -120,7 +126,23 @@ public class Game {
 				//Calls the makeMove method, if the move is not legal it let user know
 				if(shogi.makeMove(currentMove)){
 					//setting times to 0 for now, not sure how to implement
-					shogi.updateTable(currentMove, 0, 0); 
+					shogi.updateTable(currentMove);
+					//once you update the table, stop playerOne's timer and start playerTwo and vice versa
+					if(playerOne.isStarted() && playerTwo.isSuspended())
+					{
+						playerOne.suspend();
+						playerTwo.resume();
+					}
+					else if(playerTwo.isStarted() && playerOne.isSuspended())
+					{
+						playerTwo.suspend();
+						playerOne.resume();
+					}
+					else
+					{
+						playerOne.suspend();
+						playerTwo.start();
+					}
 				}
 				else{
 					System.out.println("Sorry, that is not a legal move!");
