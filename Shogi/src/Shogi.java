@@ -77,6 +77,8 @@ public class Shogi {
 		//let 's' promote to 'G' and 'p' promote to 'T' because of the Japanese names and calligraphy
 		//a promoted silver general is a 'G'eneral and behaves like 'g' was promoted to 'G'
 		//a promoted pawn is called 'T'okin and one of the alternate forms in calligraphy looks like a 'T'
+
+		
 	}
 	public void drawBoard() {
 		//since makeMove shouldn't update the layout, you need to combine information from the layout and position arrays
