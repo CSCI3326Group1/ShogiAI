@@ -1,6 +1,6 @@
 //feel free to import whatever you need
 public class Shogi {
-	private byte [] position = new byte[81+14]; //81 board spaces and 14 counters for captured pieces
+	private byte [] position = new byte[81+14+2]; //81 board spaces, 14 counters for captured pieces, and 2 king locations
 	// 0 = empty space
 	// 1 = white l
 	// 2 = white L
