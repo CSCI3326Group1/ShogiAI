@@ -68,7 +68,7 @@ public class Shogi {
 		//           |_____|_____|_____|_____|_____|_____|_____|_____|_____|  |_______|
 		//              9     8     7     6     5     4     3     2     1
 		//the box to hold captured pieces can look like this later in the game:
-		// _______
+		// _______ 
 		//|lnsgrbp|
 		//|1111111|
 		//|_______|
@@ -77,6 +77,47 @@ public class Shogi {
 		//let 's' promote to 'G' and 'p' promote to 'T' because of the Japanese names and calligraphy
 		//a promoted silver general is a 'G'eneral and behaves like 'g' was promoted to 'G'
 		//a promoted pawn is called 'T'okin and one of the alternate forms in calligraphy looks like a 'T'
+
+		//initialize array to 0;
+		for(int i = 0; i < 97; i++){
+			position[i] = 0;
+		}
+
+		//change the positions for pieces needed
+		position[0] = 1; // white l
+		position[1] = 3; // white n
+		position[2] = 5; // white s
+		position[3] = 7; // white g
+		position[4] = 8; // white k 
+		position[5] = 7; // white g
+		position[6] = 5; // white s
+		position[7] = 3; // white n
+		position[8] = 1; // white l
+		position[10] = 11; // white b
+		position[16] = 9; // white r
+
+		//white pawns
+		for(int i = 54; i < 9; i++)
+			position[i] = 13;
+
+		position[72] = 15; //black l
+		position[73] = 17; //black n
+		position[74] = 19; //black s
+		position[75] = 21; //black g
+		position[76] = 22; //black k
+		position[77] = 21; //black g
+		position[78] = 19; //black s
+		position[79] = 17; //black n
+		position[80] = 15; //black l
+		position[64] = 23; //black r
+		position[70] = 25; //black b
+
+		//black pawns
+		for(int i = 18; i < 9; i++)
+			position[i] = 27;
+		
+
+		
 	}
 	public void drawBoard() {
 		//since makeMove shouldn't update the layout, you need to combine information from the layout and position arrays
