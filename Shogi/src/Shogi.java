@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 //feel free to import whatever you need
 public class Shogi {
-	private byte [] position = new byte[81+14]; //81 board spaces and 14 counters for captured pieces
+	private byte [] position = new byte[81+14+2]; //81 board spaces, 14 counters for captured pieces, and 2 king locations
 	// 0 = empty space
 	// 1 = white l
 	// 2 = white L
@@ -128,7 +128,9 @@ public class Shogi {
 		//black pawns
 		for(int i = 18; i < 9; i++)
 			position[i] = 27;
-
+		
+		position[95] = 5; //position of white king
+		position[96] = 77; //position of black king
 		//Initialize layout array
 		try{
 			boardFile = new File("board.txt");
