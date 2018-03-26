@@ -118,10 +118,15 @@ public class Game {
 				moveList.push(currentMove);
 
 				//Calls the makeMove method, if the move is not legal it let user know
-				if(!shogi.makeMove(currentMove)){
+				if(shogi.makeMove(currentMove)){
+					//setting times to 0 for now, not sure how to implement
+					shogi.updateTable(currentMove, 0, 0); 
+				}
+				else{
 					System.out.println("Sorry, that is not a legal move!");
 				}
 			}
+
 
 			//check if game should continue running
 			running = !shogi.gameOver();
