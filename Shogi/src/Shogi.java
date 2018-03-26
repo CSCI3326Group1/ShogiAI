@@ -1,3 +1,6 @@
+import java.io.File;
+import java.util.Scanner;
+
 //feel free to import whatever you need
 public class Shogi {
 	private byte [] position = new byte[81+14]; //81 board spaces and 14 counters for captured pieces
@@ -30,14 +33,20 @@ public class Shogi {
 	//26 = black B
 	//27 = black p
 	//28 = black T
-	private char [] layout = new char[30*77]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
+
+	//file containing the board layout
+	File boardFile;
+	//Scanner to read the lines from boardFile
+	Scanner boardReader;
+
+	private char [] layout = new char[30*78]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
 	private String [] table; //dimensions will change as moves are made and width should remain at 22
 	private int moves; //counter for the amount of moves made
 	//feel free to add more variables if I missed any
 	public Shogi() {
 		//default constructor will initialize the settings for a new game
 		//one way to do this in ASCII is to follow this layout:
-		//              9     8     7     6     5     4     3     2     1
+		//              9     8     7     6     5     4     3     2     1               
 		// _______    _____________________________________________________
 		//|       |  |  l  |  n  |  s  |  g  |  k  |  g  |  s  |  n  |  l  |
 		//|       | 1|  v  |  v  |  v  |  v  |  v  |  v  |  v  |  v  |  v  |1
@@ -78,6 +87,10 @@ public class Shogi {
 		//a promoted silver general is a 'G'eneral and behaves like 'g' was promoted to 'G'
 		//a promoted pawn is called 'T'okin and one of the alternate forms in calligraphy looks like a 'T'
 
+
+		//Initialize string array
+		table = new String[30];
+
 		//initialize array to 0;
 		for(int i = 0; i < 97; i++){
 			position[i] = 0;
@@ -115,13 +128,42 @@ public class Shogi {
 		//black pawns
 		for(int i = 18; i < 9; i++)
 			position[i] = 27;
+
+		//Initialize layout array
+		try{
+			boardFile = new File("board.txt");
+			boardReader = new Scanner(boardFile);
+
+			for(int i = 0; i < 29; i++){
+				//Step through lines of char array and assign them to layout array
+				String currentLine = boardReader.nextLine();
+				for(int j = 0; j < 77; j++){
+					//i * 77 + j is the number of rows time 77 characters in each column + number of chars in current line
+					layout[i *77 + j] = currentLine.charAt(j);
+				}
+			}
+		}
+		catch(Exception e){
+			System.out.println("boardfile.txt not found");
+		}
+
+
+
+
 		
 
 		
 	}
 	public void drawBoard() {
 		//since makeMove shouldn't update the layout, you need to combine information from the layout and position arrays
+		for(int i = 0; i < 29; i++){
+			for(int j = 0; j < 77; j++){
+				System.out.print(layout[77 * i + j]);
+			}
+			System.out.print("\n");
+		}
 	}
+
 	public boolean makeMove(String move) {
 		//current plan is to use the notation since it appears to be the easiest to translate into a programming language
 		//we will use the western system
@@ -133,6 +175,8 @@ public class Shogi {
 		return true;
 	}
 	public void updateTable(String move, int time1, int time2) {
+
+
 		//this is separate from makeMove because makeMove needs to be fast for AI
 		//the main method will provide the arguments
 	}
