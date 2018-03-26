@@ -128,7 +128,9 @@ public class Shogi {
 		//black pawns
 		for(int i = 18; i < 9; i++)
 			position[i] = 27;
-
+		
+		position[95] = 5; //position of white king
+		position[96] = 77; //position of black king
 		//Initialize layout array
 		try{
 			boardFile = new File("board.txt");
