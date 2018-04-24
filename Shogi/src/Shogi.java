@@ -189,13 +189,7 @@ public class Shogi {
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
 		return true;
 	}
-<<<<<<< HEAD
-	public void updateTable(String move, int time1, int time2) {
-=======
 	public void updateTable(String move) {
-
-
->>>>>>> branch 'master' of https://github.com/CSCI3326Group1/ShogiAI.git
 		//this is separate from makeMove because makeMove needs to be fast for AI
 		//the main method will provide the arguments
 	}
