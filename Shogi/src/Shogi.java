@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.Scanner;
-
 //feel free to import whatever you need
 public class Shogi {
 	private byte [] position = new byte[81+14+2]; //81 board spaces, 14 counters for captured pieces, and 2 king locations
@@ -33,13 +32,7 @@ public class Shogi {
 	//26 = black B
 	//27 = black p
 	//28 = black T
-
-	//file containing the board layout
-	File boardFile;
-	//Scanner to read the lines from boardFile
-	Scanner boardReader;
-
-	private char [] layout = new char[30*78]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
+	private char [] layout = new char[30*77]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
 	private String [] table; //dimensions will change as moves are made and width should remain at 22
 	private int moves; //counter for the amount of moves made
 	//feel free to add more variables if I missed any
@@ -87,7 +80,10 @@ public class Shogi {
 		//a promoted silver general is a 'G'eneral and behaves like 'g' was promoted to 'G'
 		//a promoted pawn is called 'T'okin and one of the alternate forms in calligraphy looks like a 'T'
 
-
+		//file containing the board layout
+		File boardFile;
+		//Scanner to read the lines from boardFile
+		Scanner boardReader;
 		//Initialize string array
 		table = new String[30];
 
@@ -129,14 +125,13 @@ public class Shogi {
 		for(int i = 18; i < 9; i++)
 			position[i] = 27;
 		
-		position[95] = 5; //position of white king
-		position[96] = 77; //position of black king
+		position[95] = 4; //position of white king
+		position[96] = 76; //position of black king
 		//Initialize layout array
 		try{
 			boardFile = new File("board.txt");
 			boardReader = new Scanner(boardFile);
-
-			for(int i = 0; i < 29; i++){
+			for(int i = 0; i < 30; i++){
 				//Step through lines of char array and assign them to layout array
 				String currentLine = boardReader.nextLine();
 				for(int j = 0; j < 77; j++){
@@ -144,30 +139,48 @@ public class Shogi {
 					layout[i *77 + j] = currentLine.charAt(j);
 				}
 			}
+			boardReader.close();
 		}
 		catch(Exception e){
 			System.out.println("boardfile.txt not found");
 		}
-
-
-
-
-		
-
-		
 	}
 	public void drawBoard() {
 		//since makeMove shouldn't update the layout, you need to combine information from the layout and position arrays
-		for(int i = 0; i < 29; i++){
-			for(int j = 0; j < 77; j++){
-				System.out.print(layout[77 * i + j]);
+		char [] pieces = {108, 76, 110, 78, 115, 71, 103, 107, 114, 82, 98, 66, 112, 84};
+		char[] board = new char[30*77];
+		for (int i = 0; i < 30; i++)
+			for (int j = 0; j < 77; j++)
+				board[77 * i + j] = layout[77 * i + j];
+		for (int i = 0; i < 9; i++)
+			for (int j = 0; j < 9; j++){
+				if (position[9 * i + j] < 15 && position[9 * i + j] != 0){
+					board[77 * (2 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + j] - 1) % 14];
+					board[77 * (3 + 3 * i) + 14 + 6 * j] = 118;
+				}
+				else if (position[9 * i + j] != 0){
+					board[77 * (3 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + j] - 1) % 14];
+					board[77 * (2 + 3 * i) + 14 + 6 * j] = 94;
+				}
 			}
-			System.out.print("\n");
+		for (int i = 1; i < 8; i++){
+			if (position[i + 80] > 0){
+				board[77 * 2 + i] = pieces[2 * (i - 1)];
+				board[77 * 3 + i] = (char) (48 + position[i + 80]);
+			}
+			if (position[i + 87] > 0){
+				board[77 * 26 + 68 + i] = pieces[2 * (i - 1)];
+				board[77 * 27 + 68 + i] = (char) (48 + position[i + 87]);
+			}
+		}
+		for (int i = 0; i < 30; i++){
+			for (int j = 0; j < 77; j++)
+				System.out.print(board[77 * i + j]);
+			System.out.println();
 		}
 	}
-
 	public boolean makeMove(String move) {
-		//current plan is to use the notation since it appears to be the easiest to translate into a programming language
+		//current plan is to use the Kitao-Kawasaki notation since it appears to be the easiest to translate into a programming language
 		//we will use the western system
 		//for example: move = "S72x83+"
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
@@ -177,8 +190,6 @@ public class Shogi {
 		return true;
 	}
 	public void updateTable(String move, int time1, int time2) {
-
-
 		//this is separate from makeMove because makeMove needs to be fast for AI
 		//the main method will provide the arguments
 	}
