@@ -106,7 +106,7 @@ public class Shogi {
 		position[16] = 9; // white r
 
 		//white pawns
-		for(int i = 54; i < 9; i++)
+		for(int i = 18; i < 18 + 9; i++)
 			position[i] = 13;
 
 		position[72] = 15; //black l
@@ -122,7 +122,7 @@ public class Shogi {
 		position[70] = 25; //black b
 
 		//black pawns
-		for(int i = 18; i < 9; i++)
+		for(int i = 54; i < 54 + 9; i++)
 			position[i] = 27;
 		
 		position[95] = 4; //position of white king
@@ -155,11 +155,11 @@ public class Shogi {
 		for (int i = 0; i < 9; i++)
 			for (int j = 0; j < 9; j++){
 				if (position[9 * i + j] < 15 && position[9 * i + j] != 0){
-					board[77 * (2 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + j] - 1) % 14];
+					board[77 * (2 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + 8 - j] - 1) % 14];
 					board[77 * (3 + 3 * i) + 14 + 6 * j] = 118;
 				}
 				else if (position[9 * i + j] != 0){
-					board[77 * (3 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + j] - 1) % 14];
+					board[77 * (3 + 3 * i) + 14 + 6 * j] = pieces[(position[9 * i + 8 - j] - 1) % 14];
 					board[77 * (2 + 3 * i) + 14 + 6 * j] = 94;
 				}
 			}
