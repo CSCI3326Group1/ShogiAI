@@ -104,10 +104,8 @@ public class Game {
 		playerOne.start();
 		//Str
 		String currentMove;
-		boolean running = true;
+		boolean running = true, b = true;
 
-		//Keeps track of how many turns have gone by.
-		int turns;
 		while(running){
 
 			shogi.drawBoard();
@@ -122,9 +120,11 @@ public class Game {
 			else{
 				//add current move to the move stack, can be used to implement an undo function later on
 				moveList.push(currentMove);
-
+				if (shogi.moves % 2 == 0)
+					b = true;
+				else b = false;
 				//Calls the makeMove method, if the move is not legal it let user know
-				if(shogi.makeMove(currentMove)){
+				if(shogi.makeMove(shogi.convertMove(currentMove, b))){
 					//setting times to 0 for now, not sure how to implement
 					shogi.updateTable(currentMove);
 					//once you update the table, stop playerOne's timer and start playerTwo and vice versa
