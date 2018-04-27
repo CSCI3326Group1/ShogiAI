@@ -310,9 +310,8 @@ public class Shogi {
 			System.out.println();
 		}
 	}
-	public short convertMove(String move, boolean b) {
+	public short convertMove(String move) {
 		//convertMove is only called when a valid String is inputed
-		//b is true if move belongs to black, else it is false
 		//current plan is to use the Kitao-Kawasaki notation since it appears to be the easiest to translate into a programming language
 		//we will use the western system
 		//for example: move = "S72x83+"
