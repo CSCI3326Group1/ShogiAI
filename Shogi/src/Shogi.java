@@ -34,7 +34,7 @@ public class Shogi {
 	//28 = black T
 	private char [] layout = new char[30*77]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
 	private String [] table; //dimensions will change as moves are made and width should remain at 22
-	public int moves; //counter for the amount of moves made
+	public int numberOfMoves; //counter for the amount of moves made
 	//feel free to add more variables if I missed any
 	public Shogi() {
 		//default constructor will initialize the settings for a new game
@@ -80,7 +80,7 @@ public class Shogi {
 		//a promoted silver general is a 'G'eneral and behaves like 'g' was promoted to 'G'
 		//a promoted pawn is called 'T'okin and one of the alternate forms in calligraphy looks like a 'T'
 		
-		moves = 0;
+		numberOfMoves = 0;
 		//Create Squares
 		for(int i = 0; i < 97; i++)
 			squares[i] = new Square();
@@ -329,6 +329,25 @@ public class Shogi {
 	public void updateTable(String move) {
 		//this is separate from makeMove because makeMove needs to be fast for AI
 		//the main method will provide the arguments
+		
+		//should check if table is big enough, if not, then call resizeTable
+		if(numberOfMoves > table.length)
+			resizeTable(table);
+		else
+			table[numberOfMoves] = move;
+		
+	}
+	public void resizeTable(String[] table)
+	{
+		//this method resizes the table array if the amount of moves exceeds the predefined table size
+		//create a temp array with 25+ moves for each player
+		String[] temp = new String[table.length + 50];
+		//copy all contents of table to the temp array
+		for(int i = 0; i < table.length; i++)
+			temp[i] = table[i];
+		//once all contents have been copied, make temp the new table array
+		table = temp;
+		
 	}
 	public void drawTable(String time1, String time2) {
 		//in the main method, let the player be able to call drawTable() through a command
@@ -344,8 +363,16 @@ public class Shogi {
 		//|5.   R28x24  P*23   |
 		//|____________________|
 		//feel free to improve the design if you want
+		int blackMove = 0, whiteMove = 1;
 		System.out.println(" ________________________");
 		System.out.println("|\t" + time1 + " " + time2 + "|");
+		System.out.println("|________________________|");
+		for(int i = 0; i < numberOfMoves/2; i++)
+		{
+			System.out.println("|" + (i+1)+ ".\t" + table[blackMove] + "\t " + table[whiteMove] + "\t |");
+			blackMove += 2;
+			whiteMove += 2;
+		}
 		System.out.println("|________________________|");
 	}
 	public boolean gameOver() {
