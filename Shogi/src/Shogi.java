@@ -285,11 +285,11 @@ public class Shogi {
 				board[77 * i + j] = layout[77 * i + j];
 		for (int i = 0; i < 9; i++)
 			for (int j = 0; j < 9; j++){
-				if (squares[9 * i + j].piece < 15 && squares[9 * i + j].piece != 0){
+				if (squares[9 * i + 8 - j].piece < 15 && squares[9 * i + 8 - j].piece != 0){
 					board[77 * (2 + 3 * i) + 14 + 6 * j] = pieces[(squares[9 * i + 8 - j].piece - 1) % 14];
 					board[77 * (3 + 3 * i) + 14 + 6 * j] = 118;
 				}
-				else if (squares[9 * i + j].piece != 0){
+				else if (squares[9 * i + 8 - j].piece != 0){
 					board[77 * (3 + 3 * i) + 14 + 6 * j] = pieces[(squares[9 * i + 8 - j].piece - 1) % 14];
 					board[77 * (2 + 3 * i) + 14 + 6 * j] = 94;
 				}
@@ -323,6 +323,30 @@ public class Shogi {
 		//move = square index * square move
 		//if the move is legal, then update the squares array and return true
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
+		//1,  3,  5,  7,  8,  9,  11,  13,   2,   4,   6,  10,  12,  14,           1,3,5,7,9,11,13
+		//l,  n,  s,  g,  k,  r,   b,   p,   L,   N,   G,   R,   B,   T, drops for l,n,s,g,r,b,p
+		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
+		byte index = (byte) (move / 276);
+		if (numberOfMoves % 2 == 0) {
+			if (squares[index].bo.size() == 0)
+				return false;
+			boolean b = squares[index].bo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
+			if (!b)
+				return false;
+			byte temp = squares[index].piece;
+			squares[index].piece = 0;
+			
+		}
+		else {
+			if (squares[index].wo.size() == 0)
+				return false;
+			boolean b = squares[index].wo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
+			if (!b)
+				return false;
+			byte temp = squares[index].piece;
+			squares[index].piece = 0;
+			
+		}
 		return true;
 	}
 	public void updateTable(String move) {

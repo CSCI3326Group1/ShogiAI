@@ -97,7 +97,7 @@ public class Game {
 			// invoked during this call.
 			// glfwPollEvents();
 		System.out.println("Welcome to Shogi!");
-
+		moveList = new Stack<String>();
 		//stopwatch
 		StopWatch playerOne = new StopWatch();
 		StopWatch playerTwo = new StopWatch();
