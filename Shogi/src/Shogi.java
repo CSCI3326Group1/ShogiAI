@@ -320,7 +320,7 @@ public class Shogi {
 		return 0;
 	}
 	public boolean makeMove(short move) {
-		//move = square index * square move
+		//move = square index * 276 + square move
 		//if the move is legal, then update the squares array and return true
 		//perpetual check is illegal but you don't need to check for it since it will be handled in the gameOver() method
 		//1,  3,  5,  7,  8,  9,  11,  13,   2,   4,   6,  10,  12,  14,           1,3,5,7,9,11,13
