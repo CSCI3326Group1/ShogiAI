@@ -32,6 +32,18 @@ public class Shogi {
 	//26 = black B
 	//27 = black p
 	//28 = black T
+	private byte [] trans = {-9, -18, -27, -36, -45, -54, -63, -72, -9, -18, -27, -36, -45, -54, -63, -10, -8, -10, -8, -9, -10, 8, 10, -8, 
+			                 -9, -10, 8, 10, -8, -9, -10, -1, 9, 1, -8, -9, -10, -1, 8, 9, 10, 1, -8, -9, -18, -27, -36, -45, -54, -63, 
+			                 -72, -1, -2, -3, -4, -5, -6, -7, -8, 9, 18, 27, 36, 45, 54, 63, 72, 1, 2, 3, 4, 5, 6, 7, 8, -9, -18, -27, -36, 
+			                 -45, -54, -63, -72, -1, -2, -3, -4, -5, -6, -7, -8, 9, 18, 27, 36, 45, 54, 63, 72, 1, 2, 3, 4, 5, 6, 7, 8, 
+			                 -10, -20, -30, -40, -50, -60, -70, -80, 8, 16, 24, 32, 40, 48, 56, 64, 10, 20, 30, 40, 50, 60, 70, 80, -8, 
+			                 -16, -24, -32, -40, -48, -56, -64, -10, -20, -30, -40, -50, -60, -70, -80, 8, 16, 24, 32, 40, 48, 56, 64, 10, 
+			                 20, 30, 40, 50, 60, 70, 80, -8, -16, -24, -32, -40, -48, -56, -64, -9, -9, -9, -10, -1, 9, 1, -8, -9, -10, -1, 
+			                 9, 1, -8, -9, -10, -1, 9, 1, -8, -9, -18, -27, -36, -45, -54, -63, -72, -10, -1, -2, -3, -4, -5, -6, -7, -8, 
+			                 8, 9, 18, 27, 36, 45, 54, 63, 72, 10, 1, 2, 3, 4, 5, 6, 7, 8, -8, -9, -10, -20, -30, -40, -50, -60, -70, -80, 
+			                 -1, 8, 16, 24, 32, 40, 48, 56, 64, 9, 10, 20, 30, 40, 50, 60, 70, 80, 1, -8, -16, -24, -32, -40, -48, -56, 
+			                 -64, -9, -10, -1, 9, 1, -8};
+	//this array is used to locate a move's destination square
 	private char [] layout = new char[30*77]; //dimensions of the ASCII layout (you could change this to 2d array if you prefer)
 	private String [] table; //dimensions will change as moves are made and width should remain at 22
 	public int numberOfMoves; //counter for the amount of moves made
@@ -328,23 +340,71 @@ public class Shogi {
 		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
 		byte index = (byte) (move / 276);
 		if (numberOfMoves % 2 == 0) {
-			if (squares[index].bo.size() == 0)
+			if (squares[index].bo.size() == 0 || squares[index].piece < 15)
 				return false;
 			boolean b = squares[index].bo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
 			if (!b)
 				return false;
 			byte temp = squares[index].piece;
 			squares[index].piece = 0;
+			byte m = (byte) (move % 276);
+			//need to remove the incoming moves on affected squares first
+			for (int i = 0; i < squares[index].bo.size(); i++) {
+				Data x = squares[index].bo.get(i);
+				int k = index + trans[x.move];
+				for (int j = 0; j < squares[k].bi.size(); j++)
+					if (squares[k].bi.get(j).move == x.move) {
+						squares[k].bi.remove(j);
+						break;
+					}
+			}
+			squares[index].bo.clear();		
+			if (temp == 15) {
+				int k = index - 9 * (m % 8) - 9;
+				if (m < 7) {
+					squares[k].piece = temp;
+					for (int l = 1; k - 9 * l - 9 >= 0; l++) {
+						
+					}
+				}
+				else {
+					squares[k].piece = (byte) (temp + 1);
+					
+				}
+			}
+			
+			for (int i = 0; i < squares[index].bi.size(); i++) {
+				Data x = squares[index].bi.get(i);
+				x.blocked = false;
+				byte y = x.move;
+				if (y < 15) {
+					for (int j = 1; index - 9 * j >= 0; j++) {
+						if (squares[j].piece != 0) {
+							
+							break;
+						}
+					}
+				}
+				else if (y > 42 && y < 171) {
+					
+				}
+				else if (y > 190 && y < 263) {
+					
+				}
+			}
 			
 		}
 		else {
-			if (squares[index].wo.size() == 0)
+			if (squares[index].wo.size() == 0 || squares[index].piece == 0 || squares[index].piece > 14)
 				return false;
 			boolean b = squares[index].wo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
 			if (!b)
 				return false;
 			byte temp = squares[index].piece;
 			squares[index].piece = 0;
+			byte m = (byte) (move % 276);
+			
+			squares[index].wo.clear();
 			
 		}
 		return true;
