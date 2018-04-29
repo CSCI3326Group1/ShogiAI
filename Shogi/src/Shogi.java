@@ -94,7 +94,7 @@ public class Shogi {
 		
 		numberOfMoves = 0;
 		//Create Squares
-		for(int i = 0; i < 97; i++)
+		for (int i = 0; i < 97; i++)
 			squares[i] = new Square();
 		//file containing the board layout
 		File boardFile;
@@ -262,25 +262,23 @@ public class Shogi {
 		squares[60].bi.add(new Data((byte) 107, true));
 
 		//black pawns
-		for(int i = 54; i < 54 + 9; i++) {
+		for (int i = 54; i < 54 + 9; i++) {
 			squares[i].piece = 27;
 			squares[i].bo.add(new Data((byte) 171));
 			squares[i - 9].bi.add(new Data((byte) 171));
-		}
-		
+		}		
 		squares[95].piece = 4; //square of white king
 		squares[96].piece = 76; //square of black king
 		//Initialize layout array
-		try{
+		try {
 			boardFile = new File("board.txt");
 			boardReader = new Scanner(boardFile);
-			for(int i = 0; i < 30; i++){
+			for(int i = 0; i < 30; i++) {
 				//Step through lines of char array and assign them to layout array
 				String currentLine = boardReader.nextLine();
-				for(int j = 0; j < 77; j++){
+				for(int j = 0; j < 77; j++)
 					//i * 77 + j is the number of rows time 77 characters in each column + number of chars in current line
 					layout[i *77 + j] = currentLine.charAt(j);
-				}
 			}
 			boardReader.close();
 		}
@@ -296,27 +294,27 @@ public class Shogi {
 			for (int j = 0; j < 77; j++)
 				board[77 * i + j] = layout[77 * i + j];
 		for (int i = 0; i < 9; i++)
-			for (int j = 0; j < 9; j++){
-				if (squares[9 * i + 8 - j].piece < 15 && squares[9 * i + 8 - j].piece != 0){
+			for (int j = 0; j < 9; j++) {
+				if (squares[9 * i + 8 - j].piece < 15 && squares[9 * i + 8 - j].piece != 0) {
 					board[77 * (2 + 3 * i) + 14 + 6 * j] = pieces[(squares[9 * i + 8 - j].piece - 1) % 14];
 					board[77 * (3 + 3 * i) + 14 + 6 * j] = 118;
 				}
-				else if (squares[9 * i + 8 - j].piece != 0){
+				else if (squares[9 * i + 8 - j].piece != 0) {
 					board[77 * (3 + 3 * i) + 14 + 6 * j] = pieces[(squares[9 * i + 8 - j].piece - 1) % 14];
 					board[77 * (2 + 3 * i) + 14 + 6 * j] = 94;
 				}
 			}
-		for (int i = 1; i < 8; i++){
-			if (squares[i + 80].piece > 0){
+		for (int i = 1; i < 8; i++) {
+			if (squares[i + 80].piece > 0) {
 				board[77 * 2 + i] = pieces[2 * (i - 1)];
 				board[77 * 3 + i] = (char) (48 + squares[i + 80].piece);
 			}
-			if (squares[i + 87].piece > 0){
+			if (squares[i + 87].piece > 0) {
 				board[77 * 26 + 68 + i] = pieces[2 * (i - 1)];
 				board[77 * 27 + 68 + i] = (char) (48 + squares[i + 87].piece);
 			}
 		}
-		for (int i = 0; i < 30; i++){
+		for (int i = 0; i < 30; i++) {
 			for (int j = 0; j < 77; j++)
 				System.out.print(board[77 * i + j]);
 			System.out.println();
@@ -340,71 +338,119 @@ public class Shogi {
 		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
 		byte index = (byte) (move / 276);
 		if (numberOfMoves % 2 == 0) {
-			if (squares[index].bo.size() == 0 || squares[index].piece < 15)
-				return false;
-			boolean b = squares[index].bo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
-			if (!b)
-				return false;
-			byte temp = squares[index].piece;
-			squares[index].piece = 0;
-			byte m = (byte) (move % 276);
-			//need to remove the incoming moves on affected squares first
-			for (int i = 0; i < squares[index].bo.size(); i++) {
-				Data x = squares[index].bo.get(i);
-				int k = index + trans[x.move];
+			byte m = (byte) (move % 276);	
+			if (m < 269) {
+				if (squares[index].bo.size() == 0 || squares[index].piece < 15)
+					return false;		
+				int k = index + trans[m];
+				boolean b = squares[index].bo.removeIf((Data item)->item.move == m && (item.blocked == false || (squares[k].piece < 15 && squares[k].piece != 0)));
+				if (!b)
+					return false;
+				byte temp = squares[index].piece;
+				squares[index].piece = 0;
+				//need to remove the incoming moves on affected squares first
+				for (int i = 0; i < squares[index].bo.size(); i++) {
+					Data x = squares[index].bo.get(i);
+					int l = index + trans[x.move];
+					for (int j = 0; j < squares[l].bi.size(); j++)
+						if (squares[l].bi.get(j).move == x.move) {
+							squares[l].bi.remove(j);
+							break;
+						}
+				}
 				for (int j = 0; j < squares[k].bi.size(); j++)
-					if (squares[k].bi.get(j).move == x.move) {
+					if (squares[k].bi.get(j).move == m) {
 						squares[k].bi.remove(j);
 						break;
 					}
-			}
-			squares[index].bo.clear();		
-			if (temp == 15) {
-				int k = index - 9 * (m % 8) - 9;
+				squares[index].bo.clear();
+				//making the move, checking if there was a capture, adding all legal moves, and blocking the square
+				if (squares[k].piece != 0) {
+					//add incoming drop piece
+				}
 				if (m < 7) {
-					squares[k].piece = temp;
-					for (int l = 1; k - 9 * l - 9 >= 0; l++) {
-						
-					}
-				}
-				else {
-					squares[k].piece = (byte) (temp + 1);
-					
-				}
-			}
-			
-			for (int i = 0; i < squares[index].bi.size(); i++) {
-				Data x = squares[index].bi.get(i);
-				x.blocked = false;
-				byte y = x.move;
-				if (y < 15) {
-					for (int j = 1; index - 9 * j >= 0; j++) {
-						if (squares[j].piece != 0) {
-							
+					for (int i = 0; i < 7; i++) {
+						int l = k - 9 * i - 9;
+						if (l < 0)
 							break;
+						else if (l < 9) {
+							if (squares[l].piece != 0) {
+								squares[l].bi.add(new Data((byte) (i + 8), true));
+								if (squares[l].piece < 15)
+									squares[k].bo.add(new Data((byte) (i + 8), true));
+							}	
+							else {
+								squares[l].bi.add(new Data((byte) (i + 8)));
+								squares[k].bo.add(new Data((byte) (i + 8)));
+							}
+							break;
+						}
+						else if (l < 27) {
+							if (squares[l].piece != 0) {
+								squares[l].bi.add(new Data((byte) i, true));
+								squares[l].bi.add(new Data((byte) (i + 8), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) i, true));
+									squares[k].bo.add(new Data((byte) (i + 8), true));
+								}
+								break;
+							}
+							else {
+								squares[l].bi.add(new Data((byte) i));
+								squares[l].bi.add(new Data((byte) (i + 8)));
+								squares[k].bo.add(new Data((byte) i));
+								squares[k].bo.add(new Data((byte) (i + 8)));
+							}
+						}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
 						}
 					}
 				}
-				else if (y > 42 && y < 171) {
-					
+				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172) {
+					squares[k].piece = (byte) (temp + 1);
 				}
-				else if (y > 190 && y < 263) {
-					
+				else squares[k].piece = temp;
+				//moves no longer blocked on original square
+				for (int i = 0; i < squares[index].bi.size(); i++) {
+					Data x = squares[index].bi.get(i);
+					x.blocked = false;
+					byte y = x.move;
+					if (y < 15) {
+						for (int j = 1; index - 9 * j >= 0; j++) {
+							if (squares[j].piece != 0) {
+								
+								break;
+							}
+						}
+					}
+					else if (y > 42 && y < 171) {
+						
+					}
+					else if (y > 190 && y < 263) {
+						
+					}
 				}
 			}
-			
+			else {
+				//drop move
+			}
 		}
 		else {
 			if (squares[index].wo.size() == 0 || squares[index].piece == 0 || squares[index].piece > 14)
 				return false;
-			boolean b = squares[index].wo.removeIf((Data item)->item.move == (byte) (move % 276) && item.blocked == false);
+			byte m = (byte) (move % 276);
+			int k = index - trans[m];
+			boolean b = squares[index].wo.removeIf((Data item)->item.move == m && (item.blocked == false || squares[k].piece > 14));
 			if (!b)
 				return false;
-			byte temp = squares[index].piece;
-			squares[index].piece = 0;
-			byte m = (byte) (move % 276);
-			
-			squares[index].wo.clear();
 			
 		}
 		return true;
