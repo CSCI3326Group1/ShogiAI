@@ -348,7 +348,7 @@ public class Shogi {
 					return false;
 				byte temp = squares[index].piece;
 				squares[index].piece = 0;
-				//need to remove the incoming moves on affected squares first
+				//remove the incoming moves on affected squares
 				for (int i = 0; i < squares[index].bo.size(); i++) {
 					Data x = squares[index].bo.get(i);
 					int l = index + trans[x.move];
@@ -370,7 +370,7 @@ public class Shogi {
 					temp2 = squares[k].piece;
 					b = false;
 				}
-				//making the move, adding all legal moves, and blocking the square
+				//adding all legal moves
 				if (m < 7) {
 					for (int i = 0; i < 7; i++) {
 						int l = k - 9 * i - 9;
@@ -417,11 +417,25 @@ public class Shogi {
 						}
 					}
 				}
+				else if (m < 15) {
+					//need to code
+				}
+				//making the move
 				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172) {
 					squares[k].piece = (byte) (temp + 1);
 				}
 				else squares[k].piece = temp;
+				//blocking the destination square
+				//black incoming
+				for (int i = 0; i < squares[k].bi.size(); i++) {
+					//need to code
+				}
+				//white incoming
+				for (int i = 0; i < squares[k].wi.size(); i++) {
+					//need to code
+				}
 				//moves no longer blocked on original square
+				//black incoming
 				for (int i = 0; i < squares[index].bi.size(); i++) {
 					Data x = squares[index].bi.get(i);
 					x.blocked = false;
@@ -440,6 +454,10 @@ public class Shogi {
 					else if (y > 190 && y < 263) {
 						
 					}
+				}
+				//white incoming
+				for (int i = 0; i < squares[index].wi.size(); i++) {
+					
 				}
 				//incoming captured piece
 				if (!b) {
@@ -464,6 +482,9 @@ public class Shogi {
 								else squares[i].bi.add(new Data((byte) 275));
 							}
 						}
+						else if (temp2 > 10) {
+							//need to code
+						}
 					}
 				}
 			}
@@ -472,14 +493,19 @@ public class Shogi {
 			}
 		}
 		else {
-			if (squares[index].wo.size() == 0 || squares[index].piece == 0 || squares[index].piece > 14)
-				return false;
 			byte m = (byte) (move % 276);
-			int k = index - trans[m];
-			boolean b = squares[index].wo.removeIf((Data item)->item.move == m && (item.blocked == false || squares[k].piece > 14));
-			if (!b)
-				return false;
-			
+			if (m < 269) {
+				if (squares[index].wo.size() == 0 || squares[index].piece == 0 || squares[index].piece > 14)
+					return false;
+				int k = index - trans[m];
+				boolean b = squares[index].wo.removeIf((Data item)->item.move == m && (item.blocked == false || squares[k].piece > 14));
+				if (!b)
+					return false;
+				//need to code
+			}
+			else {
+				//drop move
+			}
 		}
 		return true;
 	}
