@@ -427,7 +427,7 @@ public class Shogi {
 						}
 					}
 				}
-				else if (m < 15) {
+				else if (m < 15 || (m > 172 && m < 179)) {
 					for (int i = 173; i < 179; i++) {
 						int l = k + trans[i];
 						if (l < 0 || l > 80 || ((i == 174 || i == 175) && l % 9 == 0) || ((i == 177 || i == 178) && l % 9 == 8)) {}
@@ -484,7 +484,7 @@ public class Shogi {
 						}
 					}
 				}
-				else if (m < 19) {
+				else if (m < 19 || (m > 178 && m < 185)) {
 					for (int i = 179; i < 185; i++) {
 						int l = k + trans[i];
 						if (l < 0 || l > 80 || ((i == 180 || i == 181) && l % 9 == 0) || ((i == 183 || i == 184) && l % 9 == 8)) {}
@@ -525,7 +525,7 @@ public class Shogi {
 						}
 					}
 				}
-				else if (m < 29) {
+				else if (m < 29 || (m > 184 && m < 191)) {
 					for (int i = 185; i < 191; i++) {
 						int l = k + trans[i];
 						if (l < 0 || l > 80 || ((i == 186 || i == 187) && l % 9 == 0) || ((i == 189 || i == 190) && l % 9 == 8)) {}
@@ -574,10 +574,62 @@ public class Shogi {
 						}
 					}
 				}
-				else if (m < 51) {
+				else if (m < 75) {
 					for (int i = 43; i < 51; i++) {
 						int l = k - 9 * (i - 42);
 						if (l < 0)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+					for (int i = 51; i < 59; i++) {
+						int l = k - i + 50;
+						if (l < 0 || l / 9 != k / 9)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+					for (int i = 59; i < 67; i++) {
+						int l = k + 9 * (i - 58);
+						if (l > 80)
 							break;
 						else if (squares[l].piece != 0) {
 							squares[l].bi.add(new Data((byte) i, true));
@@ -601,15 +653,13 @@ public class Shogi {
 							}
 						}
 					}
-				}
-				else if (m < 59) {
-					for (int i = 51; i < 59; i++) {
-						int l = k - i + 50;
-						if (l < 0 || l / 9 != k / 9)
+					for (int i = 67; i < 75; i++) {
+						int l = k + i - 66;
+						if (l / 9 != k / 9)
 							break;
 						else if (squares[l].piece != 0) {
 							squares[l].bi.add(new Data((byte) i, true));
-							if (l < 27 || k < 27) {
+							if (k < 27) {
 								squares[l].bi.add(new Data((byte) (i + 32), true));
 								if (squares[l].piece < 15) {
 									squares[k].bo.add(new Data((byte) (i + 32), true));
@@ -623,10 +673,373 @@ public class Shogi {
 						else {
 							squares[l].bi.add(new Data((byte) i));
 							squares[k].bo.add(new Data((byte) i));
-							if (l < 27 || k < 27) {
+							if (k < 27) {
 								squares[l].bi.add(new Data((byte) (i + 32)));
 								squares[k].bo.add(new Data((byte) (i + 32)));
 							}
+						}
+					}
+				}
+				else if (m < 107 || (m > 190 && m < 227)) {
+					for (int i = 191; i < 199; i++) {
+						int l = k - 9 * (i - 190);
+						if (l < 0)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 0) {}
+					else if (squares[k - 10].piece != 0) {
+						squares[k - 10].bi.add(new Data((byte) 199, true));
+						if (squares[k - 10].piece < 15)
+							squares[k].bo.add(new Data((byte) 199, true));
+					}
+					else {
+						squares[k - 10].bi.add(new Data((byte) 199));
+						squares[k].bo.add(new Data((byte) 199));
+					}
+					for (int i = 200; i < 208; i++) {
+						int l = k - i + 199;
+						if (l < 0 || l / 9 != k / 9)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 0) {}
+					else if (squares[k + 8].piece != 0) {
+						squares[k + 8].bi.add(new Data((byte) 208, true));
+						if (squares[k + 8].piece < 15)
+							squares[k].bo.add(new Data((byte) 208, true));
+					}
+					else {
+						squares[k + 8].bi.add(new Data((byte) 208));
+						squares[k].bo.add(new Data((byte) 208));
+					}
+					for (int i = 209; i < 217; i++) {
+						int l = k + 9 * (i - 208);
+						if (l > 80)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 8) {}
+					else if (squares[k + 10].piece != 0) {
+						squares[k + 10].bi.add(new Data((byte) 217, true));
+						if (squares[k + 10].piece < 15)
+							squares[k].bo.add(new Data((byte) 217, true));
+					}
+					else {
+						squares[k + 10].bi.add(new Data((byte) 217));
+						squares[k].bo.add(new Data((byte) 217));
+					}
+					for (int i = 218; i < 226; i++) {
+						int l = k + i - 217;
+						if (l / 9 != k / 9)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 8) {}
+					else if (squares[k - 8].piece != 0) {
+						squares[k - 8].bi.add(new Data((byte) 226, true));
+						if (squares[k - 8].piece < 15)
+							squares[k].bo.add(new Data((byte) 226, true));
+					}
+					else {
+						squares[k - 8].bi.add(new Data((byte) 226));
+						squares[k].bo.add(new Data((byte) 226));
+					}
+				}
+				else if (m < 139) {
+					for (int i = 107; i < 115; i++) {
+						int l = k - 10 * (i - 106);
+						if (l < 0 || k % 9 <= i - 107)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+					for (int i = 115; i < 123; i++) {
+						int l = k + 8 * (i - 114);
+						if (l > 80 || k % 9 <= i - 115)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+					for (int i = 123; i < 131; i++) {
+						int l = k + 10 * (i - 122);
+						if (l > 80 || k % 9 >= 8 - (i - 123))
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+					for (int i = 131; i < 139; i++) {
+						int l = k - 8 * (i - 130);
+						if (l < 0 || k % 9 >= 8 - (i - 131))
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+				}
+				else if (m < 171 || (m > 226 && m < 263)) {
+					if (k - 9 < 0) {}
+					else if (squares[k - 9].piece != 0) {
+						squares[k - 9].bi.add(new Data((byte) 227, true));
+						if (squares[k - 9].piece < 15)
+							squares[k].bo.add(new Data((byte) 227, true));
+					}
+					else {
+						squares[k - 9].bi.add(new Data((byte) 227));
+						squares[k].bo.add(new Data((byte) 227));
+					}
+					for (int i = 228; i < 236; i++) {
+						int l = k - 10 * (i - 227);
+						if (l < 0 || k % 9 <= i - 228)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 0) {}
+					else if (squares[k - 1].piece != 0) {
+						squares[k - 1].bi.add(new Data((byte) 236, true));
+						if (squares[k - 1].piece < 15)
+							squares[k].bo.add(new Data((byte) 236, true));
+					}
+					else {
+						squares[k - 1].bi.add(new Data((byte) 236));
+						squares[k].bo.add(new Data((byte) 236));
+					}
+					for (int i = 237; i < 245; i++) {
+						int l = k + 8 * (i - 236);
+						if (l > 80 || k % 9 <= i - 237)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k + 9 > 80) {}
+					else if (squares[k + 9].piece != 0) {
+						squares[k + 9].bi.add(new Data((byte) 245, true));
+						if (squares[k + 9].piece < 15)
+							squares[k].bo.add(new Data((byte) 245, true));
+					}
+					else {
+						squares[k + 9].bi.add(new Data((byte) 245));
+						squares[k].bo.add(new Data((byte) 245));
+					}
+					for (int i = 246; i < 254; i++) {
+						int l = k + 10 * (i - 245);
+						if (l > 80 || k % 9 >= 8 - (i - 246))
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+					if (k % 9 == 8) {}
+					else if (squares[k + 1].piece != 0) {
+						squares[k + 1].bi.add(new Data((byte) 254, true));
+						if (squares[k + 1].piece < 15)
+							squares[k].bo.add(new Data((byte) 254, true));
+					}
+					else {
+						squares[k + 1].bi.add(new Data((byte) 254));
+						squares[k].bo.add(new Data((byte) 254));
+					}
+					for (int i = 255; i < 263; i++) {
+						int l = k - 8 * (i - 254);
+						if (l < 0 || k % 9 >= 8 - (i - 255))
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m == 171) {
+					if (k < 18) {
+						if (squares[k - 9].piece != 0) {
+							squares[k - 9].bi.add(new Data((byte) 172, true));
+							if (squares[k - 9].piece < 15)
+								squares[k].bo.add(new Data((byte) 172, true));
+						}
+						else {
+							squares[k - 9].bi.add(new Data((byte) 172));
+							squares[k].bo.add(new Data((byte) 172));
+						}
+					}
+					else if (k < 36) {
+						if (squares[k - 9].piece != 0) {
+							squares[k - 9].bi.add(new Data((byte) 171, true));
+							squares[k - 9].bi.add(new Data((byte) 172, true));
+							if (squares[k - 9].piece < 15) {
+								squares[k].bo.add(new Data((byte) 171, true));
+								squares[k].bo.add(new Data((byte) 172, true));
+							}
+						}
+						else {
+							squares[k - 9].bi.add(new Data((byte) 171));
+							squares[k].bo.add(new Data((byte) 171));
+							squares[k - 9].bi.add(new Data((byte) 172));
+							squares[k].bo.add(new Data((byte) 172));
+						}
+					}
+					else if (squares[k - 9].piece != 0) {
+						squares[k - 9].bi.add(new Data((byte) 171, true));
+						if (squares[k - 9].piece < 15)
+							squares[k].bo.add(new Data((byte) 171, true));
+					}
+					else {
+						squares[k - 9].bi.add(new Data((byte) 171));
+						squares[k].bo.add(new Data((byte) 171));
+					}
+				}
+				else {
+					for (int i = 263; i < 269; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 264 || i == 265) && l % 9 == 0) || ((i == 267 || i == 268) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
 						}
 					}
 				}
@@ -639,39 +1052,15 @@ public class Shogi {
 						squares[96].piece = (byte) k;
 				}
 				//blocking the destination square
-				//black incoming
-				for (int i = 0; i < squares[k].bi.size(); i++) {
-					//need to code
-				}
-				//white incoming
-				for (int i = 0; i < squares[k].wi.size(); i++) {
-					//need to code
-				}
+				for (int i = 0; i < squares[k].bi.size(); i++)
+					squares[k].bi.get(i).blocked = true;
+				for (int i = 0; i < squares[k].wi.size(); i++)
+					squares[k].wi.get(i).blocked = true;
 				//moves no longer blocked on original square
-				//black incoming
-				for (int i = 0; i < squares[index].bi.size(); i++) {
-					Data x = squares[index].bi.get(i);
-					x.blocked = false;
-					byte y = x.move;
-					if (y < 15) {
-						for (int j = 1; index - 9 * j >= 0; j++) {
-							if (squares[j].piece != 0) {
-								
-								break;
-							}
-						}
-					}
-					else if (y > 42 && y < 171) {
-						
-					}
-					else if (y > 190 && y < 263) {
-						
-					}
-				}
-				//white incoming
-				for (int i = 0; i < squares[index].wi.size(); i++) {
-					
-				}
+				for (int i = 0; i < squares[index].bi.size(); i++)
+					squares[index].bi.get(i).blocked = false;
+				for (int i = 0; i < squares[index].wi.size(); i++)
+					squares[index].wi.get(i).blocked = false;
 				//incoming captured piece
 				if (!b) {
 					boolean c = true;
@@ -720,6 +1109,7 @@ public class Shogi {
 				//drop move
 			}
 		}
+		//need to redo moves for relevant rooks, bishops, and lancers
 		return true;
 	}
 	public void updateTable(String move) {
