@@ -364,10 +364,13 @@ public class Shogi {
 						break;
 					}
 				squares[index].bo.clear();
-				//making the move, checking if there was a capture, adding all legal moves, and blocking the square
+				//checking if there was a capture
+				byte temp2 = 0;
 				if (squares[k].piece != 0) {
-					//add incoming drop piece
+					temp2 = squares[k].piece;
+					b = false;
 				}
+				//making the move, adding all legal moves, and blocking the square
 				if (m < 7) {
 					for (int i = 0; i < 7; i++) {
 						int l = k - 9 * i - 9;
@@ -436,6 +439,31 @@ public class Shogi {
 					}
 					else if (y > 190 && y < 263) {
 						
+					}
+				}
+				//incoming captured piece
+				if (!b) {
+					boolean c = true;
+					if (squares[81 + (temp2 - 1) / 2].piece++ == 0) {
+						if (temp2 > 12) {
+							for (int i = 9; i < 81; i++) {
+								if (squares[i - 9].piece == 8) {
+									for (int j = 0; j < squares[i].wi.size(); j++)
+										if (squares[i].wi.get(j).move < 269) {
+											c = false;
+											break;
+										}
+									if (!c || squares[i - 9].wo.size() != 0) {
+										if (squares[i].piece != 0)
+											squares[i].bi.add(new Data((byte) 275, true));
+										else squares[i].bi.add(new Data((byte) 275));
+									}
+								}
+								else if (squares[i].piece != 0)
+									squares[i].bi.add(new Data((byte) 275, true));
+								else squares[i].bi.add(new Data((byte) 275));
+							}
+						}
 					}
 				}
 			}
