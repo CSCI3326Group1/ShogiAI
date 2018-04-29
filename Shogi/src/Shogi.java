@@ -340,7 +340,7 @@ public class Shogi {
 		if (numberOfMoves % 2 == 0) {
 			byte m = (byte) (move % 276);	
 			if (m < 269) {
-				if (squares[index].bo.size() == 0 || squares[index].piece < 15)
+				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
 					return false;		
 				int k = index + trans[m];
 				boolean b = squares[index].bo.removeIf((Data item)->item.move == m && (item.blocked == false || (squares[k].piece < 15 && squares[k].piece != 0)));
@@ -369,6 +369,16 @@ public class Shogi {
 				if (squares[k].piece != 0) {
 					temp2 = squares[k].piece;
 					b = false;
+					for (int i = 0; i < squares[k].wo.size(); i++) {
+						Data x = squares[k].wo.get(i);
+						int l = k + trans[x.move];
+						for (int j = 0; j < squares[l].wi.size(); j++)
+							if (squares[l].wi.get(j).move == x.move) {
+								squares[l].wi.remove(j);
+								break;
+							}
+					}
+					squares[k].wo.clear();
 				}
 				//adding all legal moves
 				if (m < 7) {
@@ -418,13 +428,216 @@ public class Shogi {
 					}
 				}
 				else if (m < 15) {
-					//need to code
+					for (int i = 173; i < 179; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 174 || i == 175) && l % 9 == 0) || ((i == 177 || i == 178) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 17) {
+					for (int i = 15; i < 17; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || (i == 15 && l % 9 == 0) || (i == 16 && l % 9 == 8)) {}
+						else if (l < 18) {
+							if (squares[l].piece != 0) {
+								squares[l].bi.add(new Data((byte) (i + 2), true));
+								if (squares[l].piece < 15)
+									squares[k].bo.add(new Data((byte) (i + 2), true));
+							}	
+							else {
+								squares[l].bi.add(new Data((byte) (i + 2)));
+								squares[k].bo.add(new Data((byte) (i + 2)));
+							}
+						}
+						else if (l < 27) {
+							if (squares[l].piece != 0) {
+								squares[l].bi.add(new Data((byte) i, true));
+								squares[l].bi.add(new Data((byte) (i + 2), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) i, true));
+									squares[k].bo.add(new Data((byte) (i + 2), true));
+								}
+							}
+							else {
+								squares[l].bi.add(new Data((byte) i));
+								squares[l].bi.add(new Data((byte) (i + 2)));
+								squares[k].bo.add(new Data((byte) i));
+								squares[k].bo.add(new Data((byte) (i + 2)));
+							}
+						}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 19) {
+					for (int i = 179; i < 185; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 180 || i == 181) && l % 9 == 0) || ((i == 183 || i == 184) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 24) {
+					for (int i = 19; i < 24; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 20 || i == 21) && l % 9 == 0) || ((i == 22 || i == 23) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 5), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) i, true));
+									squares[k].bo.add(new Data((byte) (i + 5), true));
+								}		
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (k < 27 || l < 27) {
+								squares[l].bi.add(new Data((byte) (i + 5)));
+								squares[k].bo.add(new Data((byte) (i + 5)));
+							}
+						}
+					}
+				}
+				else if (m < 29) {
+					for (int i = 185; i < 191; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 186 || i == 187) && l % 9 == 0) || ((i == 189 || i == 190) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 35) {
+					for (int i = 29; i < 35; i++) {
+						int l = k + trans[i];
+						if (l < 0 || l > 80 || ((i == 30 || i == 31) && l % 9 == 0) || ((i == 33 || i == 34) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 43) {
+					for (int i = 35; i < 43; i++) {
+						int l = k + trans[i];
+						boolean c = false;
+						for (int j = 0; j < squares[l].wi.size(); j++)
+							if (squares[l].wi.get(j).move < 269)
+								c = true;
+						if (l < 0 || l > 80 || c || ((i > 35 && i < 39) && l % 9 == 0) || ((i > 39 && i < 43) && l % 9 == 8)) {}
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+						}
+					}
+				}
+				else if (m < 51) {
+					for (int i = 43; i < 51; i++) {
+						int l = k - 9 * (i - 42);
+						if (l < 0)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (l < 27 || k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (l < 27 || k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
+				}
+				else if (m < 59) {
+					for (int i = 51; i < 59; i++) {
+						int l = k - i + 50;
+						if (l < 0 || l / 9 != k / 9)
+							break;
+						else if (squares[l].piece != 0) {
+							squares[l].bi.add(new Data((byte) i, true));
+							if (l < 27 || k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32), true));
+								if (squares[l].piece < 15) {
+									squares[k].bo.add(new Data((byte) (i + 32), true));
+									squares[k].bo.add(new Data((byte) i, true));
+								}
+							}
+							else if (squares[l].piece < 15)
+								squares[k].bo.add(new Data((byte) i, true));
+							break;
+						}
+						else {
+							squares[l].bi.add(new Data((byte) i));
+							squares[k].bo.add(new Data((byte) i));
+							if (l < 27 || k < 27) {
+								squares[l].bi.add(new Data((byte) (i + 32)));
+								squares[k].bo.add(new Data((byte) (i + 32)));
+							}
+						}
+					}
 				}
 				//making the move
-				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172) {
+				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172)
 					squares[k].piece = (byte) (temp + 1);
+				else {
+					squares[k].piece = temp;
+					if (m > 34 && m < 43)
+						squares[96].piece = (byte) k;
 				}
-				else squares[k].piece = temp;
 				//blocking the destination square
 				//black incoming
 				for (int i = 0; i < squares[k].bi.size(); i++) {
@@ -495,7 +708,7 @@ public class Shogi {
 		else {
 			byte m = (byte) (move % 276);
 			if (m < 269) {
-				if (squares[index].wo.size() == 0 || squares[index].piece == 0 || squares[index].piece > 14)
+				if (squares[index].wo.isEmpty() || squares[index].piece == 0 || squares[index].piece > 14)
 					return false;
 				int k = index - trans[m];
 				boolean b = squares[index].wo.removeIf((Data item)->item.move == m && (item.blocked == false || squares[k].piece > 14));
