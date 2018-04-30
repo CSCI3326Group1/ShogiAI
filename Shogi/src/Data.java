@@ -1,5 +1,5 @@
 public class Data {
-	byte move;
+	short move;
 	//Convention is clockwise, least to greatest, followed by promote variations
 	//        l,  n,  s,  g,  k,  r,   b,   p,   L,   N,   G,   R,   B,   T, drops for l,n,s,g,r,b,p
 	//moves: 15,  4, 10,  6,  8, 64,  64,   2,   6,   6,   6,  36,  36,   6,   7
@@ -36,11 +36,11 @@ public class Data {
 	//28 - s move forward left and promote
 	//etc.
 	boolean blocked;
-	Data(byte x){
+	Data(short x){
 		move = x;
 		blocked = false;
 	}
-	Data(byte x, boolean b){
+	Data(short x, boolean b){
 		move = x;
 		blocked = b;
 	}

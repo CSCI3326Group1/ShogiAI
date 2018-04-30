@@ -105,167 +105,167 @@ public class Shogi {
 
 		//change the squares for pieces needed
 		squares[0].piece = 1; // white l
-		squares[0].wo.add(new Data((byte) 0));
-		squares[9].wi.add(new Data((byte) 0));
-		squares[18].wi.add(new Data((byte) 1, true));
+		squares[0].wo.add(new Data((short) 0));
+		squares[9].wi.add(new Data((short) 0));
+		squares[18].wi.add(new Data((short) 1, true));
 		squares[1].piece = 3; // white n
-		squares[18].wi.add(new Data((byte) 16, true));
-		squares[20].wi.add(new Data((byte) 15, true));
+		squares[18].wi.add(new Data((short) 16, true));
+		squares[20].wi.add(new Data((short) 15, true));
 		squares[2].piece = 5; // white s
-		squares[2].wo.add(new Data((byte) 19));
-		squares[2].wo.add(new Data((byte) 20));
-		squares[10].wi.add(new Data((byte) 23, true));
-		squares[11].wi.add(new Data((byte) 19));
-		squares[12].wi.add(new Data((byte) 20));
+		squares[2].wo.add(new Data((short) 19));
+		squares[2].wo.add(new Data((short) 20));
+		squares[10].wi.add(new Data((short) 23, true));
+		squares[11].wi.add(new Data((short) 19));
+		squares[12].wi.add(new Data((short) 20));
 		squares[3].piece = 7; // white g
-		squares[3].wo.add(new Data((byte) 29));
-		squares[3].wo.add(new Data((byte) 30));
-		squares[3].wo.add(new Data((byte) 34));
-		squares[11].wi.add(new Data((byte) 34));
-		squares[12].wi.add(new Data((byte) 29));
-		squares[13].wi.add(new Data((byte) 30));
-		squares[2].wi.add(new Data((byte) 33, true));
-		squares[4].wi.add(new Data((byte) 31, true));
+		squares[3].wo.add(new Data((short) 29));
+		squares[3].wo.add(new Data((short) 30));
+		squares[3].wo.add(new Data((short) 34));
+		squares[11].wi.add(new Data((short) 34));
+		squares[12].wi.add(new Data((short) 29));
+		squares[13].wi.add(new Data((short) 30));
+		squares[2].wi.add(new Data((short) 33, true));
+		squares[4].wi.add(new Data((short) 31, true));
 		squares[4].piece = 8; // white k
-		squares[4].wo.add(new Data((byte) 35));
-		squares[4].wo.add(new Data((byte) 36));
-		squares[4].wo.add(new Data((byte) 42));
-		squares[12].wi.add(new Data((byte) 42));
-		squares[13].wi.add(new Data((byte) 35));
-		squares[14].wi.add(new Data((byte) 36));
-		squares[3].wi.add(new Data((byte) 41, true));
-		squares[5].wi.add(new Data((byte) 37, true));
+		squares[4].wo.add(new Data((short) 35));
+		squares[4].wo.add(new Data((short) 36));
+		squares[4].wo.add(new Data((short) 42));
+		squares[12].wi.add(new Data((short) 42));
+		squares[13].wi.add(new Data((short) 35));
+		squares[14].wi.add(new Data((short) 36));
+		squares[3].wi.add(new Data((short) 41, true));
+		squares[5].wi.add(new Data((short) 37, true));
 		squares[5].piece = 7; // white g
-		squares[5].wo.add(new Data((byte) 29));
-		squares[5].wo.add(new Data((byte) 30));
-		squares[5].wo.add(new Data((byte) 34));
-		squares[13].wi.add(new Data((byte) 34));
-		squares[14].wi.add(new Data((byte) 29));
-		squares[15].wi.add(new Data((byte) 30));
-		squares[4].wi.add(new Data((byte) 33, true));
-		squares[6].wi.add(new Data((byte) 31, true));
+		squares[5].wo.add(new Data((short) 29));
+		squares[5].wo.add(new Data((short) 30));
+		squares[5].wo.add(new Data((short) 34));
+		squares[13].wi.add(new Data((short) 34));
+		squares[14].wi.add(new Data((short) 29));
+		squares[15].wi.add(new Data((short) 30));
+		squares[4].wi.add(new Data((short) 33, true));
+		squares[6].wi.add(new Data((short) 31, true));
 		squares[6].piece = 5; // white s
-		squares[6].wo.add(new Data((byte) 19));
-		squares[6].wo.add(new Data((byte) 23));
-		squares[16].wi.add(new Data((byte) 20, true));
-		squares[15].wi.add(new Data((byte) 19));
-		squares[14].wi.add(new Data((byte) 23));
+		squares[6].wo.add(new Data((short) 19));
+		squares[6].wo.add(new Data((short) 23));
+		squares[16].wi.add(new Data((short) 20, true));
+		squares[15].wi.add(new Data((short) 19));
+		squares[14].wi.add(new Data((short) 23));
 		squares[7].piece = 3; // white n
-		squares[24].wi.add(new Data((byte) 16, true));
-		squares[26].wi.add(new Data((byte) 15, true));
+		squares[24].wi.add(new Data((short) 16, true));
+		squares[26].wi.add(new Data((short) 15, true));
 		squares[8].piece = 1; // white l
-		squares[8].wo.add(new Data((byte) 0));
-		squares[17].wi.add(new Data((byte) 0));
-		squares[26].wi.add(new Data((byte) 1, true));
+		squares[8].wo.add(new Data((short) 0));
+		squares[17].wi.add(new Data((short) 0));
+		squares[26].wi.add(new Data((short) 1, true));
 		squares[10].piece = 11; // white b
-		squares[0].wi.add(new Data((byte) 123, true));
-		squares[2].wi.add(new Data((byte) 115, true));
-		squares[18].wi.add(new Data((byte) 131, true));
-		squares[20].wi.add(new Data((byte) 107, true));
+		squares[0].wi.add(new Data((short) 123, true));
+		squares[2].wi.add(new Data((short) 115, true));
+		squares[18].wi.add(new Data((short) 131, true));
+		squares[20].wi.add(new Data((short) 107, true));
 		squares[16].piece = 9; // white r
-		squares[16].wo.add(new Data((byte) 71));
-		squares[16].wo.add(new Data((byte) 70));
-		squares[16].wo.add(new Data((byte) 69));
-		squares[16].wo.add(new Data((byte) 68));
-		squares[16].wo.add(new Data((byte) 67));
-		squares[16].wo.add(new Data((byte) 51));
-		squares[11].wi.add(new Data((byte) 71));
-		squares[12].wi.add(new Data((byte) 70));
-		squares[13].wi.add(new Data((byte) 69));
-		squares[14].wi.add(new Data((byte) 68));
-		squares[15].wi.add(new Data((byte) 67));
-		squares[17].wi.add(new Data((byte) 51));
-		squares[25].wi.add(new Data((byte) 43, true));
-		squares[10].wi.add(new Data((byte) 72, true));
-		squares[7].wi.add(new Data((byte) 59, true));
+		squares[16].wo.add(new Data((short) 71));
+		squares[16].wo.add(new Data((short) 70));
+		squares[16].wo.add(new Data((short) 69));
+		squares[16].wo.add(new Data((short) 68));
+		squares[16].wo.add(new Data((short) 67));
+		squares[16].wo.add(new Data((short) 51));
+		squares[11].wi.add(new Data((short) 71));
+		squares[12].wi.add(new Data((short) 70));
+		squares[13].wi.add(new Data((short) 69));
+		squares[14].wi.add(new Data((short) 68));
+		squares[15].wi.add(new Data((short) 67));
+		squares[17].wi.add(new Data((short) 51));
+		squares[25].wi.add(new Data((short) 43, true));
+		squares[10].wi.add(new Data((short) 72, true));
+		squares[7].wi.add(new Data((short) 59, true));
 
 		//white pawns
 		for(int i = 18; i < 18 + 9; i++) {
 			squares[i].piece = 13;
-			squares[i].wo.add(new Data((byte) 171));
-			squares[i + 9].wi.add(new Data((byte) 171));
+			squares[i].wo.add(new Data((short) 171));
+			squares[i + 9].wi.add(new Data((short) 171));
 		}
 
 		squares[72].piece = 15; //black l
-		squares[72].bo.add(new Data((byte) 0));
-		squares[63].bi.add(new Data((byte) 0));
-		squares[54].bi.add(new Data((byte) 1, true));
+		squares[72].bo.add(new Data((short) 0));
+		squares[63].bi.add(new Data((short) 0));
+		squares[54].bi.add(new Data((short) 1, true));
 		squares[73].piece = 17; //black n
-		squares[65].bi.add(new Data((byte) 16, true));
-		squares[63].bi.add(new Data((byte) 15, true));
+		squares[65].bi.add(new Data((short) 16, true));
+		squares[63].bi.add(new Data((short) 15, true));
 		squares[74].piece = 19; //black s
-		squares[74].bo.add(new Data((byte) 19));
-		squares[74].bo.add(new Data((byte) 23));
-		squares[64].bi.add(new Data((byte) 20, true));
-		squares[65].bi.add(new Data((byte) 19));
-		squares[66].bi.add(new Data((byte) 23));
+		squares[74].bo.add(new Data((short) 19));
+		squares[74].bo.add(new Data((short) 23));
+		squares[64].bi.add(new Data((short) 20, true));
+		squares[65].bi.add(new Data((short) 19));
+		squares[66].bi.add(new Data((short) 23));
 		squares[75].piece = 21; //black g
-		squares[75].bo.add(new Data((byte) 29));
-		squares[75].bo.add(new Data((byte) 30));
-		squares[75].bo.add(new Data((byte) 34));
-		squares[67].bi.add(new Data((byte) 34));
-		squares[66].bi.add(new Data((byte) 29));
-		squares[65].bi.add(new Data((byte) 30));
-		squares[76].bi.add(new Data((byte) 33, true));
-		squares[74].bi.add(new Data((byte) 31, true));
+		squares[75].bo.add(new Data((short) 29));
+		squares[75].bo.add(new Data((short) 30));
+		squares[75].bo.add(new Data((short) 34));
+		squares[67].bi.add(new Data((short) 34));
+		squares[66].bi.add(new Data((short) 29));
+		squares[65].bi.add(new Data((short) 30));
+		squares[76].bi.add(new Data((short) 33, true));
+		squares[74].bi.add(new Data((short) 31, true));
 		squares[76].piece = 22; //black k
-		squares[76].bo.add(new Data((byte) 35));
-		squares[76].bo.add(new Data((byte) 36));
-		squares[76].bo.add(new Data((byte) 42));
-		squares[68].bi.add(new Data((byte) 42));
-		squares[67].bi.add(new Data((byte) 35));
-		squares[66].bi.add(new Data((byte) 36));
-		squares[77].bi.add(new Data((byte) 41, true));
-		squares[75].bi.add(new Data((byte) 37, true));
+		squares[76].bo.add(new Data((short) 35));
+		squares[76].bo.add(new Data((short) 36));
+		squares[76].bo.add(new Data((short) 42));
+		squares[68].bi.add(new Data((short) 42));
+		squares[67].bi.add(new Data((short) 35));
+		squares[66].bi.add(new Data((short) 36));
+		squares[77].bi.add(new Data((short) 41, true));
+		squares[75].bi.add(new Data((short) 37, true));
 		squares[77].piece = 21; //black g
-		squares[77].bo.add(new Data((byte) 29));
-		squares[77].bo.add(new Data((byte) 30));
-		squares[77].bo.add(new Data((byte) 34));
-		squares[69].bi.add(new Data((byte) 34));
-		squares[68].bi.add(new Data((byte) 29));
-		squares[67].bi.add(new Data((byte) 30));
-		squares[78].bi.add(new Data((byte) 33, true));
-		squares[76].bi.add(new Data((byte) 31, true));
+		squares[77].bo.add(new Data((short) 29));
+		squares[77].bo.add(new Data((short) 30));
+		squares[77].bo.add(new Data((short) 34));
+		squares[69].bi.add(new Data((short) 34));
+		squares[68].bi.add(new Data((short) 29));
+		squares[67].bi.add(new Data((short) 30));
+		squares[78].bi.add(new Data((short) 33, true));
+		squares[76].bi.add(new Data((short) 31, true));
 		squares[78].piece = 19; //black s
-		squares[78].bo.add(new Data((byte) 19));
-		squares[78].bo.add(new Data((byte) 20));
-		squares[70].bi.add(new Data((byte) 23, true));
-		squares[69].bi.add(new Data((byte) 19));
-		squares[68].bi.add(new Data((byte) 20));
+		squares[78].bo.add(new Data((short) 19));
+		squares[78].bo.add(new Data((short) 20));
+		squares[70].bi.add(new Data((short) 23, true));
+		squares[69].bi.add(new Data((short) 19));
+		squares[68].bi.add(new Data((short) 20));
 		squares[79].piece = 17; //black n
-		squares[71].bi.add(new Data((byte) 16, true));
-		squares[69].bi.add(new Data((byte) 15, true));
+		squares[71].bi.add(new Data((short) 16, true));
+		squares[69].bi.add(new Data((short) 15, true));
 		squares[80].piece = 15; //black l
-		squares[80].bo.add(new Data((byte) 0));
-		squares[71].bi.add(new Data((byte) 0));
-		squares[62].bi.add(new Data((byte) 1, true));
+		squares[80].bo.add(new Data((short) 0));
+		squares[71].bi.add(new Data((short) 0));
+		squares[62].bi.add(new Data((short) 1, true));
 		squares[64].piece = 23; //black r
-		squares[64].bo.add(new Data((byte) 71));
-		squares[64].bo.add(new Data((byte) 70));
-		squares[64].bo.add(new Data((byte) 69));
-		squares[64].bo.add(new Data((byte) 68));
-		squares[64].bo.add(new Data((byte) 67));
-		squares[64].bo.add(new Data((byte) 51));
-		squares[69].bi.add(new Data((byte) 71));
-		squares[68].bi.add(new Data((byte) 70));
-		squares[67].bi.add(new Data((byte) 69));
-		squares[66].bi.add(new Data((byte) 68));
-		squares[65].bi.add(new Data((byte) 67));
-		squares[63].bi.add(new Data((byte) 51));
-		squares[55].bi.add(new Data((byte) 43, true));
-		squares[70].bi.add(new Data((byte) 72, true));
-		squares[73].bi.add(new Data((byte) 59, true));
+		squares[64].bo.add(new Data((short) 71));
+		squares[64].bo.add(new Data((short) 70));
+		squares[64].bo.add(new Data((short) 69));
+		squares[64].bo.add(new Data((short) 68));
+		squares[64].bo.add(new Data((short) 67));
+		squares[64].bo.add(new Data((short) 51));
+		squares[69].bi.add(new Data((short) 71));
+		squares[68].bi.add(new Data((short) 70));
+		squares[67].bi.add(new Data((short) 69));
+		squares[66].bi.add(new Data((short) 68));
+		squares[65].bi.add(new Data((short) 67));
+		squares[63].bi.add(new Data((short) 51));
+		squares[55].bi.add(new Data((short) 43, true));
+		squares[70].bi.add(new Data((short) 72, true));
+		squares[73].bi.add(new Data((short) 59, true));
 		squares[70].piece = 25; //black b
-		squares[80].bi.add(new Data((byte) 123, true));
-		squares[78].bi.add(new Data((byte) 115, true));
-		squares[62].bi.add(new Data((byte) 131, true));
-		squares[60].bi.add(new Data((byte) 107, true));
+		squares[80].bi.add(new Data((short) 123, true));
+		squares[78].bi.add(new Data((short) 115, true));
+		squares[62].bi.add(new Data((short) 131, true));
+		squares[60].bi.add(new Data((short) 107, true));
 
 		//black pawns
 		for (int i = 54; i < 54 + 9; i++) {
 			squares[i].piece = 27;
-			squares[i].bo.add(new Data((byte) 171));
-			squares[i - 9].bi.add(new Data((byte) 171));
+			squares[i].bo.add(new Data((short) 171));
+			squares[i - 9].bi.add(new Data((short) 171));
 		}		
 		squares[95].piece = 4; //square of white king
 		squares[96].piece = 76; //square of black king
@@ -327,7 +327,8 @@ public class Shogi {
 		//for example: move = "S72x83+"
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
 		//lastly, the player chose to promote it
-		return 0;
+		short array1 [] = {16179, 6243};
+		return array1[numberOfMoves];
 	}
 	public boolean makeMove(short move) {
 		//move = square index * 276 + square move
@@ -338,14 +339,19 @@ public class Shogi {
 		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
 		byte index = (byte) (move / 276);
 		if (numberOfMoves % 2 == 0) {
-			byte m = (byte) (move % 276);	
+			short m = (short) (move % 276);	
 			if (m < 269) {
 				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
-					return false;		
+					return false;	
 				int k = index + trans[m];
+				System.out.println("test1");
 				boolean b = squares[index].bo.removeIf((Data item)->item.move == m && (item.blocked == false || (squares[k].piece < 15 && squares[k].piece != 0)));
+				for (int i = 0; i < squares[index].bo.size(); i++)
+					System.out.println(squares[index].bo.get(i).move);
+				System.out.println((short) 128);
 				if (!b)
 					return false;
+				System.out.println("test2");
 				byte temp = squares[index].piece;
 				squares[index].piece = 0;
 				//remove the incoming moves on affected squares
@@ -412,32 +418,32 @@ public class Shogi {
 										}
 									if (!c || squares[i - 9].wo.size() != 0) {
 										if (squares[i].piece != 0)
-											squares[i].bi.add(new Data((byte) 275, true));
-										else squares[i].bi.add(new Data((byte) 275));
+											squares[i].bi.add(new Data((short) 275, true));
+										else squares[i].bi.add(new Data((short) 275));
 									}
 								}
 								else if (squares[i].piece != 0)
-									squares[i].bi.add(new Data((byte) 275, true));
-								else squares[i].bi.add(new Data((byte) 275));
+									squares[i].bi.add(new Data((short) 275, true));
+								else squares[i].bi.add(new Data((short) 275));
 							}
 						else if (temp2 == 3 || temp2 == 4)
 							for (int i = 18; i < 81; i++) {
 								if (squares[i].piece != 0)
-									squares[i].bi.add(new Data((byte) 270, true));
-								else squares[i].bi.add(new Data((byte) 270));
+									squares[i].bi.add(new Data((short) 270, true));
+								else squares[i].bi.add(new Data((short) 270));
 							}
 						else if (temp2 == 1 || temp2 == 2)
 							for (int i = 9; i < 81; i++) {
 								if (squares[i].piece != 0)
-									squares[i].bi.add(new Data((byte) 269, true));
-								else squares[i].bi.add(new Data((byte) 269));
+									squares[i].bi.add(new Data((short) 269, true));
+								else squares[i].bi.add(new Data((short) 269));
 							}
 						else {
 							int n = 269 + (temp2 - 1) / 2;
 							for (int i = 0; i < 81; i++) {
 								if (squares[i].piece != 0)
-									squares[i].bi.add(new Data((byte) n, true));
-								else squares[i].bi.add(new Data((byte) n));
+									squares[i].bi.add(new Data((short) n, true));
+								else squares[i].bi.add(new Data((short) n));
 							}
 						}
 					}
@@ -468,42 +474,42 @@ public class Shogi {
 						break;
 					else if (l < 9) {
 						if (squares[l].piece != 0) {
-							squares[l].bi.add(new Data((byte) (i + 8), true));
+							squares[l].bi.add(new Data((short) (i + 8), true));
 							if (squares[l].piece < 15)
-								squares[k].bo.add(new Data((byte) (i + 8), true));
+								squares[k].bo.add(new Data((short) (i + 8), true));
 						}	
 						else {
-							squares[l].bi.add(new Data((byte) (i + 8)));
-							squares[k].bo.add(new Data((byte) (i + 8)));
+							squares[l].bi.add(new Data((short) (i + 8)));
+							squares[k].bo.add(new Data((short) (i + 8)));
 						}
 						break;
 					}
 					else if (l < 27) {
 						if (squares[l].piece != 0) {
-							squares[l].bi.add(new Data((byte) i, true));
-							squares[l].bi.add(new Data((byte) (i + 8), true));
+							squares[l].bi.add(new Data((short) i, true));
+							squares[l].bi.add(new Data((short) (i + 8), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) i, true));
-								squares[k].bo.add(new Data((byte) (i + 8), true));
+								squares[k].bo.add(new Data((short) i, true));
+								squares[k].bo.add(new Data((short) (i + 8), true));
 							}
 							break;
 						}
 						else {
-							squares[l].bi.add(new Data((byte) i));
-							squares[l].bi.add(new Data((byte) (i + 8)));
-							squares[k].bo.add(new Data((byte) i));
-							squares[k].bo.add(new Data((byte) (i + 8)));
+							squares[l].bi.add(new Data((short) i));
+							squares[l].bi.add(new Data((short) (i + 8)));
+							squares[k].bo.add(new Data((short) i));
+							squares[k].bo.add(new Data((short) (i + 8)));
 						}
 					}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -512,13 +518,13 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 174 || i == 175) && l % 9 == 0) || ((i == 177 || i == 178) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -528,39 +534,39 @@ public class Shogi {
 					if (l < 0 || l > 80 || (i == 15 && l % 9 == 0) || (i == 16 && l % 9 == 8)) {}
 					else if (l < 18) {
 						if (squares[l].piece != 0) {
-							squares[l].bi.add(new Data((byte) (i + 2), true));
+							squares[l].bi.add(new Data((short) (i + 2), true));
 							if (squares[l].piece < 15)
-								squares[k].bo.add(new Data((byte) (i + 2), true));
+								squares[k].bo.add(new Data((short) (i + 2), true));
 						}	
 						else {
-							squares[l].bi.add(new Data((byte) (i + 2)));
-							squares[k].bo.add(new Data((byte) (i + 2)));
+							squares[l].bi.add(new Data((short) (i + 2)));
+							squares[k].bo.add(new Data((short) (i + 2)));
 						}
 					}
 					else if (l < 27) {
 						if (squares[l].piece != 0) {
-							squares[l].bi.add(new Data((byte) i, true));
-							squares[l].bi.add(new Data((byte) (i + 2), true));
+							squares[l].bi.add(new Data((short) i, true));
+							squares[l].bi.add(new Data((short) (i + 2), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) i, true));
-								squares[k].bo.add(new Data((byte) (i + 2), true));
+								squares[k].bo.add(new Data((short) i, true));
+								squares[k].bo.add(new Data((short) (i + 2), true));
 							}
 						}
 						else {
-							squares[l].bi.add(new Data((byte) i));
-							squares[l].bi.add(new Data((byte) (i + 2)));
-							squares[k].bo.add(new Data((byte) i));
-							squares[k].bo.add(new Data((byte) (i + 2)));
+							squares[l].bi.add(new Data((short) i));
+							squares[l].bi.add(new Data((short) (i + 2)));
+							squares[k].bo.add(new Data((short) i));
+							squares[k].bo.add(new Data((short) (i + 2)));
 						}
 					}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -569,13 +575,13 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 180 || i == 181) && l % 9 == 0) || ((i == 183 || i == 184) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -584,23 +590,23 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 20 || i == 21) && l % 9 == 0) || ((i == 22 || i == 23) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 5), true));
+							squares[l].bi.add(new Data((short) (i + 5), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) i, true));
-								squares[k].bo.add(new Data((byte) (i + 5), true));
+								squares[k].bo.add(new Data((short) i, true));
+								squares[k].bo.add(new Data((short) (i + 5), true));
 							}		
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 5)));
-							squares[k].bo.add(new Data((byte) (i + 5)));
+							squares[l].bi.add(new Data((short) (i + 5)));
+							squares[k].bo.add(new Data((short) (i + 5)));
 						}
 					}
 				}
@@ -610,13 +616,13 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 186 || i == 187) && l % 9 == 0) || ((i == 189 || i == 190) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -625,13 +631,13 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 30 || i == 31) && l % 9 == 0) || ((i == 33 || i == 34) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -644,13 +650,13 @@ public class Shogi {
 							c = true;
 					if (l < 0 || l > 80 || c || ((i > 35 && i < 39) && l % 9 == 0) || ((i > 39 && i < 43) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
@@ -660,24 +666,24 @@ public class Shogi {
 					if (l < 0)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -686,24 +692,24 @@ public class Shogi {
 					if (l < 0 || l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -712,24 +718,24 @@ public class Shogi {
 					if (l > 80)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (l < 27 || k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (l < 27 || k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -738,24 +744,24 @@ public class Shogi {
 					if (l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -766,100 +772,100 @@ public class Shogi {
 					if (l < 0)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k - 10].piece != 0) {
-					squares[k - 10].bi.add(new Data((byte) 199, true));
+					squares[k - 10].bi.add(new Data((short) 199, true));
 					if (squares[k - 10].piece < 15)
-						squares[k].bo.add(new Data((byte) 199, true));
+						squares[k].bo.add(new Data((short) 199, true));
 				}
 				else {
-					squares[k - 10].bi.add(new Data((byte) 199));
-					squares[k].bo.add(new Data((byte) 199));
+					squares[k - 10].bi.add(new Data((short) 199));
+					squares[k].bo.add(new Data((short) 199));
 				}
 				for (int i = 200; i < 208; i++) {
 					int l = k - i + 199;
 					if (l < 0 || l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k + 8].piece != 0) {
-					squares[k + 8].bi.add(new Data((byte) 208, true));
+					squares[k + 8].bi.add(new Data((short) 208, true));
 					if (squares[k + 8].piece < 15)
-						squares[k].bo.add(new Data((byte) 208, true));
+						squares[k].bo.add(new Data((short) 208, true));
 				}
 				else {
-					squares[k + 8].bi.add(new Data((byte) 208));
-					squares[k].bo.add(new Data((byte) 208));
+					squares[k + 8].bi.add(new Data((short) 208));
+					squares[k].bo.add(new Data((short) 208));
 				}
 				for (int i = 209; i < 217; i++) {
 					int l = k + 9 * (i - 208);
 					if (l > 80)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k + 10].piece != 0) {
-					squares[k + 10].bi.add(new Data((byte) 217, true));
+					squares[k + 10].bi.add(new Data((short) 217, true));
 					if (squares[k + 10].piece < 15)
-						squares[k].bo.add(new Data((byte) 217, true));
+						squares[k].bo.add(new Data((short) 217, true));
 				}
 				else {
-					squares[k + 10].bi.add(new Data((byte) 217));
-					squares[k].bo.add(new Data((byte) 217));
+					squares[k + 10].bi.add(new Data((short) 217));
+					squares[k].bo.add(new Data((short) 217));
 				}
 				for (int i = 218; i < 226; i++) {
 					int l = k + i - 217;
 					if (l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k - 8].piece != 0) {
-					squares[k - 8].bi.add(new Data((byte) 226, true));
+					squares[k - 8].bi.add(new Data((short) 226, true));
 					if (squares[k - 8].piece < 15)
-						squares[k].bo.add(new Data((byte) 226, true));
+						squares[k].bo.add(new Data((short) 226, true));
 				}
 				else {
-					squares[k - 8].bi.add(new Data((byte) 226));
-					squares[k].bo.add(new Data((byte) 226));
+					squares[k - 8].bi.add(new Data((short) 226));
+					squares[k].bo.add(new Data((short) 226));
 				}
 			}
 			else if (m < 139) {
@@ -868,24 +874,24 @@ public class Shogi {
 					if (l < 0 || k % 9 <= i - 107)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -894,24 +900,24 @@ public class Shogi {
 					if (l > 80 || k % 9 <= i - 115)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -920,24 +926,24 @@ public class Shogi {
 					if (l > 80 || k % 9 >= 8 - (i - 123))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -946,24 +952,24 @@ public class Shogi {
 					if (l < 0 || k % 9 >= 8 - (i - 131))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32), true));
+							squares[l].bi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece < 15) {
-								squares[k].bo.add(new Data((byte) (i + 32), true));
-								squares[k].bo.add(new Data((byte) i, true));
+								squares[k].bo.add(new Data((short) (i + 32), true));
+								squares[k].bo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 						if (k < 27 || l < 27) {
-							squares[l].bi.add(new Data((byte) (i + 32)));
-							squares[k].bo.add(new Data((byte) (i + 32)));
+							squares[l].bi.add(new Data((short) (i + 32)));
+							squares[k].bo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -971,141 +977,141 @@ public class Shogi {
 			else if (m < 171 || (m > 226 && m < 263)) {
 				if (k - 9 < 0) {}
 				else if (squares[k - 9].piece != 0) {
-					squares[k - 9].bi.add(new Data((byte) 227, true));
+					squares[k - 9].bi.add(new Data((short) 227, true));
 					if (squares[k - 9].piece < 15)
-						squares[k].bo.add(new Data((byte) 227, true));
+						squares[k].bo.add(new Data((short) 227, true));
 				}
 				else {
-					squares[k - 9].bi.add(new Data((byte) 227));
-					squares[k].bo.add(new Data((byte) 227));
+					squares[k - 9].bi.add(new Data((short) 227));
+					squares[k].bo.add(new Data((short) 227));
 				}
 				for (int i = 228; i < 236; i++) {
 					int l = k - 10 * (i - 227);
 					if (l < 0 || k % 9 <= i - 228)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k - 1].piece != 0) {
-					squares[k - 1].bi.add(new Data((byte) 236, true));
+					squares[k - 1].bi.add(new Data((short) 236, true));
 					if (squares[k - 1].piece < 15)
-						squares[k].bo.add(new Data((byte) 236, true));
+						squares[k].bo.add(new Data((short) 236, true));
 				}
 				else {
-					squares[k - 1].bi.add(new Data((byte) 236));
-					squares[k].bo.add(new Data((byte) 236));
+					squares[k - 1].bi.add(new Data((short) 236));
+					squares[k].bo.add(new Data((short) 236));
 				}
 				for (int i = 237; i < 245; i++) {
 					int l = k + 8 * (i - 236);
 					if (l > 80 || k % 9 <= i - 237)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k + 9 > 80) {}
 				else if (squares[k + 9].piece != 0) {
-					squares[k + 9].bi.add(new Data((byte) 245, true));
+					squares[k + 9].bi.add(new Data((short) 245, true));
 					if (squares[k + 9].piece < 15)
-						squares[k].bo.add(new Data((byte) 245, true));
+						squares[k].bo.add(new Data((short) 245, true));
 				}
 				else {
-					squares[k + 9].bi.add(new Data((byte) 245));
-					squares[k].bo.add(new Data((byte) 245));
+					squares[k + 9].bi.add(new Data((short) 245));
+					squares[k].bo.add(new Data((short) 245));
 				}
 				for (int i = 246; i < 254; i++) {
 					int l = k + 10 * (i - 245);
 					if (l > 80 || k % 9 >= 8 - (i - 246))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k + 1].piece != 0) {
-					squares[k + 1].bi.add(new Data((byte) 254, true));
+					squares[k + 1].bi.add(new Data((short) 254, true));
 					if (squares[k + 1].piece < 15)
-						squares[k].bo.add(new Data((byte) 254, true));
+						squares[k].bo.add(new Data((short) 254, true));
 				}
 				else {
-					squares[k + 1].bi.add(new Data((byte) 254));
-					squares[k].bo.add(new Data((byte) 254));
+					squares[k + 1].bi.add(new Data((short) 254));
+					squares[k].bo.add(new Data((short) 254));
 				}
 				for (int i = 255; i < 263; i++) {
 					int l = k - 8 * (i - 254);
 					if (l < 0 || k % 9 >= 8 - (i - 255))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
 			else if (m == 171) {
 				if (k < 18) {
 					if (squares[k - 9].piece != 0) {
-						squares[k - 9].bi.add(new Data((byte) 172, true));
+						squares[k - 9].bi.add(new Data((short) 172, true));
 						if (squares[k - 9].piece < 15)
-							squares[k].bo.add(new Data((byte) 172, true));
+							squares[k].bo.add(new Data((short) 172, true));
 					}
 					else {
-						squares[k - 9].bi.add(new Data((byte) 172));
-						squares[k].bo.add(new Data((byte) 172));
+						squares[k - 9].bi.add(new Data((short) 172));
+						squares[k].bo.add(new Data((short) 172));
 					}
 				}
 				else if (k < 36) {
 					if (squares[k - 9].piece != 0) {
-						squares[k - 9].bi.add(new Data((byte) 171, true));
-						squares[k - 9].bi.add(new Data((byte) 172, true));
+						squares[k - 9].bi.add(new Data((short) 171, true));
+						squares[k - 9].bi.add(new Data((short) 172, true));
 						if (squares[k - 9].piece < 15) {
-							squares[k].bo.add(new Data((byte) 171, true));
-							squares[k].bo.add(new Data((byte) 172, true));
+							squares[k].bo.add(new Data((short) 171, true));
+							squares[k].bo.add(new Data((short) 172, true));
 						}
 					}
 					else {
-						squares[k - 9].bi.add(new Data((byte) 171));
-						squares[k].bo.add(new Data((byte) 171));
-						squares[k - 9].bi.add(new Data((byte) 172));
-						squares[k].bo.add(new Data((byte) 172));
+						squares[k - 9].bi.add(new Data((short) 171));
+						squares[k].bo.add(new Data((short) 171));
+						squares[k - 9].bi.add(new Data((short) 172));
+						squares[k].bo.add(new Data((short) 172));
 					}
 				}
 				else if (squares[k - 9].piece != 0) {
-					squares[k - 9].bi.add(new Data((byte) 171, true));
+					squares[k - 9].bi.add(new Data((short) 171, true));
 					if (squares[k - 9].piece < 15)
-						squares[k].bo.add(new Data((byte) 171, true));
+						squares[k].bo.add(new Data((short) 171, true));
 				}
 				else {
-					squares[k - 9].bi.add(new Data((byte) 171));
-					squares[k].bo.add(new Data((byte) 171));
+					squares[k - 9].bi.add(new Data((short) 171));
+					squares[k].bo.add(new Data((short) 171));
 				}
 			}
 			else {
@@ -1113,20 +1119,20 @@ public class Shogi {
 					int l = k + trans[i];
 					if (l < 0 || l > 80 || ((i == 264 || i == 265) && l % 9 == 0) || ((i == 267 || i == 268) && l % 9 == 8)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].bi.add(new Data((byte) i, true));
+						squares[l].bi.add(new Data((short) i, true));
 						if (squares[l].piece < 15)
-							squares[k].bo.add(new Data((byte) i, true));
+							squares[k].bo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].bi.add(new Data((byte) i));
-						squares[k].bo.add(new Data((byte) i));
+						squares[l].bi.add(new Data((short) i));
+						squares[k].bo.add(new Data((short) i));
 					}
 				}
 			}
 		}
 		else {
 			//white's move
-			byte m = (byte) (move % 276);	
+			short m = (short) (move % 276);	
 			if (m < 269) {
 				if (squares[index].wo.isEmpty() || squares[index].piece > 14 || squares[index].piece == 0)
 					return false;		
@@ -1200,32 +1206,32 @@ public class Shogi {
 										}
 									if (!c || squares[i + 9].bo.size() != 0) {
 										if (squares[i].piece != 0)
-											squares[i].wi.add(new Data((byte) 275, true));
-										else squares[i].wi.add(new Data((byte) 275));
+											squares[i].wi.add(new Data((short) 275, true));
+										else squares[i].wi.add(new Data((short) 275));
 									}
 								}
 								else if (squares[i].piece != 0)
-									squares[i].wi.add(new Data((byte) 275, true));
-								else squares[i].wi.add(new Data((byte) 275));
+									squares[i].wi.add(new Data((short) 275, true));
+								else squares[i].wi.add(new Data((short) 275));
 							}
 						else if (temp2 == 17 || temp2 == 18)
 							for (int i = 0; i < 63; i++) {
 								if (squares[i].piece != 0)
-									squares[i].wi.add(new Data((byte) 270, true));
-								else squares[i].wi.add(new Data((byte) 270));
+									squares[i].wi.add(new Data((short) 270, true));
+								else squares[i].wi.add(new Data((short) 270));
 							}
 						else if (temp2 == 15 || temp2 == 16)
 							for (int i = 0; i < 72; i++) {
 								if (squares[i].piece != 0)
-									squares[i].wi.add(new Data((byte) 269, true));
-								else squares[i].wi.add(new Data((byte) 269));
+									squares[i].wi.add(new Data((short) 269, true));
+								else squares[i].wi.add(new Data((short) 269));
 							}
 						else {
 							int n = 269 + (temp2 - 15) / 2;
 							for (int i = 0; i < 81; i++) {
 								if (squares[i].piece != 0)
-									squares[i].wi.add(new Data((byte) n, true));
-								else squares[i].wi.add(new Data((byte) n));
+									squares[i].wi.add(new Data((short) n, true));
+								else squares[i].wi.add(new Data((short) n));
 							}
 						}
 					}
@@ -1256,42 +1262,42 @@ public class Shogi {
 						break;
 					else if (l > 71) {
 						if (squares[l].piece != 0) {
-							squares[l].wi.add(new Data((byte) (i + 8), true));
+							squares[l].wi.add(new Data((short) (i + 8), true));
 							if (squares[l].piece > 14)
-								squares[k].wo.add(new Data((byte) (i + 8), true));
+								squares[k].wo.add(new Data((short) (i + 8), true));
 						}	
 						else {
-							squares[l].wi.add(new Data((byte) (i + 8)));
-							squares[k].wo.add(new Data((byte) (i + 8)));
+							squares[l].wi.add(new Data((short) (i + 8)));
+							squares[k].wo.add(new Data((short) (i + 8)));
 						}
 						break;
 					}
 					else if (l > 53) {
 						if (squares[l].piece != 0) {
-							squares[l].wi.add(new Data((byte) i, true));
-							squares[l].wi.add(new Data((byte) (i + 8), true));
+							squares[l].wi.add(new Data((short) i, true));
+							squares[l].wi.add(new Data((short) (i + 8), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) i, true));
-								squares[k].wo.add(new Data((byte) (i + 8), true));
+								squares[k].wo.add(new Data((short) i, true));
+								squares[k].wo.add(new Data((short) (i + 8), true));
 							}
 							break;
 						}
 						else {
-							squares[l].wi.add(new Data((byte) i));
-							squares[l].wi.add(new Data((byte) (i + 8)));
-							squares[k].wo.add(new Data((byte) i));
-							squares[k].wo.add(new Data((byte) (i + 8)));
+							squares[l].wi.add(new Data((short) i));
+							squares[l].wi.add(new Data((short) (i + 8)));
+							squares[k].wo.add(new Data((short) i));
+							squares[k].wo.add(new Data((short) (i + 8)));
 						}
 					}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1300,13 +1306,13 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 174 || i == 175) && l % 9 == 8) || ((i == 177 || i == 178) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1316,39 +1322,39 @@ public class Shogi {
 					if (l < 0 || l > 80 || (i == 15 && l % 9 == 8) || (i == 16 && l % 9 == 0)) {}
 					else if (l > 62) {
 						if (squares[l].piece != 0) {
-							squares[l].wi.add(new Data((byte) (i + 2), true));
+							squares[l].wi.add(new Data((short) (i + 2), true));
 							if (squares[l].piece > 14)
-								squares[k].wo.add(new Data((byte) (i + 2), true));
+								squares[k].wo.add(new Data((short) (i + 2), true));
 						}	
 						else {
-							squares[l].wi.add(new Data((byte) (i + 2)));
-							squares[k].wo.add(new Data((byte) (i + 2)));
+							squares[l].wi.add(new Data((short) (i + 2)));
+							squares[k].wo.add(new Data((short) (i + 2)));
 						}
 					}
 					else if (l > 53) {
 						if (squares[l].piece != 0) {
-							squares[l].wi.add(new Data((byte) i, true));
-							squares[l].wi.add(new Data((byte) (i + 2), true));
+							squares[l].wi.add(new Data((short) i, true));
+							squares[l].wi.add(new Data((short) (i + 2), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) i, true));
-								squares[k].wo.add(new Data((byte) (i + 2), true));
+								squares[k].wo.add(new Data((short) i, true));
+								squares[k].wo.add(new Data((short) (i + 2), true));
 							}
 						}
 						else {
-							squares[l].wi.add(new Data((byte) i));
-							squares[l].wi.add(new Data((byte) (i + 2)));
-							squares[k].wo.add(new Data((byte) i));
-							squares[k].wo.add(new Data((byte) (i + 2)));
+							squares[l].wi.add(new Data((short) i));
+							squares[l].wi.add(new Data((short) (i + 2)));
+							squares[k].wo.add(new Data((short) i));
+							squares[k].wo.add(new Data((short) (i + 2)));
 						}
 					}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1357,13 +1363,13 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 180 || i == 181) && l % 9 == 8) || ((i == 183 || i == 184) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1372,23 +1378,23 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 20 || i == 21) && l % 9 == 8) || ((i == 22 || i == 23) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 5), true));
+							squares[l].wi.add(new Data((short) (i + 5), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) i, true));
-								squares[k].wo.add(new Data((byte) (i + 5), true));
+								squares[k].wo.add(new Data((short) i, true));
+								squares[k].wo.add(new Data((short) (i + 5), true));
 							}		
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 5)));
-							squares[k].wo.add(new Data((byte) (i + 5)));
+							squares[l].wi.add(new Data((short) (i + 5)));
+							squares[k].wo.add(new Data((short) (i + 5)));
 						}
 					}
 				}
@@ -1398,13 +1404,13 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 186 || i == 187) && l % 9 == 8) || ((i == 189 || i == 190) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1413,13 +1419,13 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 30 || i == 31) && l % 9 == 8) || ((i == 33 || i == 34) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1432,13 +1438,13 @@ public class Shogi {
 							c = true;
 					if (l < 0 || l > 80 || c || ((i > 35 && i < 39) && l % 9 == 8) || ((i > 39 && i < 43) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
@@ -1448,24 +1454,24 @@ public class Shogi {
 					if (l > 80)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1474,24 +1480,24 @@ public class Shogi {
 					if (l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1500,24 +1506,24 @@ public class Shogi {
 					if (l < 0)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (l > 53 || k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (l > 53 || k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1526,24 +1532,24 @@ public class Shogi {
 					if (l < 0 || l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1554,100 +1560,100 @@ public class Shogi {
 					if (l > 80)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k + 10].piece != 0) {
-					squares[k + 10].wi.add(new Data((byte) 199, true));
+					squares[k + 10].wi.add(new Data((short) 199, true));
 					if (squares[k + 10].piece > 14)
-						squares[k].wo.add(new Data((byte) 199, true));
+						squares[k].wo.add(new Data((short) 199, true));
 				}
 				else {
-					squares[k + 10].wi.add(new Data((byte) 199));
-					squares[k].wo.add(new Data((byte) 199));
+					squares[k + 10].wi.add(new Data((short) 199));
+					squares[k].wo.add(new Data((short) 199));
 				}
 				for (int i = 200; i < 208; i++) {
 					int l = k + i - 199;
 					if (l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k - 8].piece != 0) {
-					squares[k - 8].wi.add(new Data((byte) 208, true));
+					squares[k - 8].wi.add(new Data((short) 208, true));
 					if (squares[k - 8].piece > 14)
-						squares[k].wo.add(new Data((byte) 208, true));
+						squares[k].wo.add(new Data((short) 208, true));
 				}
 				else {
-					squares[k - 8].wi.add(new Data((byte) 208));
-					squares[k].wo.add(new Data((byte) 208));
+					squares[k - 8].wi.add(new Data((short) 208));
+					squares[k].wo.add(new Data((short) 208));
 				}
 				for (int i = 209; i < 217; i++) {
 					int l = k - 9 * (i - 208);
 					if (l < 0)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k - 10].piece != 0) {
-					squares[k - 10].wi.add(new Data((byte) 217, true));
+					squares[k - 10].wi.add(new Data((short) 217, true));
 					if (squares[k - 10].piece > 14)
-						squares[k].wo.add(new Data((byte) 217, true));
+						squares[k].wo.add(new Data((short) 217, true));
 				}
 				else {
-					squares[k - 10].wi.add(new Data((byte) 217));
-					squares[k].wo.add(new Data((byte) 217));
+					squares[k - 10].wi.add(new Data((short) 217));
+					squares[k].wo.add(new Data((short) 217));
 				}
 				for (int i = 218; i < 226; i++) {
 					int l = k - i + 217;
 					if (l < 0 || l / 9 != k / 9)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k + 8].piece != 0) {
-					squares[k + 8].wi.add(new Data((byte) 226, true));
+					squares[k + 8].wi.add(new Data((short) 226, true));
 					if (squares[k + 8].piece > 14)
-						squares[k].wo.add(new Data((byte) 226, true));
+						squares[k].wo.add(new Data((short) 226, true));
 				}
 				else {
-					squares[k + 8].wi.add(new Data((byte) 226));
-					squares[k].wo.add(new Data((byte) 226));
+					squares[k + 8].wi.add(new Data((short) 226));
+					squares[k].wo.add(new Data((short) 226));
 				}
 			}
 			else if (m < 139) {
@@ -1656,24 +1662,24 @@ public class Shogi {
 					if (l > 80 || k % 9 >= 8 - (i - 107))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1682,24 +1688,24 @@ public class Shogi {
 					if (l < 0 || k % 9 >= 8 - (i - 115))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1708,24 +1714,24 @@ public class Shogi {
 					if (l < 0 || k % 9 <= i - 123)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1734,24 +1740,24 @@ public class Shogi {
 					if (l > 80 || k % 9 <= i - 131)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32), true));
+							squares[l].wi.add(new Data((short) (i + 32), true));
 							if (squares[l].piece > 14) {
-								squares[k].wo.add(new Data((byte) (i + 32), true));
-								squares[k].wo.add(new Data((byte) i, true));
+								squares[k].wo.add(new Data((short) (i + 32), true));
+								squares[k].wo.add(new Data((short) i, true));
 							}
 						}
 						else if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 						if (k > 53 || l > 53) {
-							squares[l].wi.add(new Data((byte) (i + 32)));
-							squares[k].wo.add(new Data((byte) (i + 32)));
+							squares[l].wi.add(new Data((short) (i + 32)));
+							squares[k].wo.add(new Data((short) (i + 32)));
 						}
 					}
 				}
@@ -1759,141 +1765,141 @@ public class Shogi {
 			else if (m < 171 || (m > 226 && m < 263)) {
 				if (k + 9 > 80) {}
 				else if (squares[k + 9].piece != 0) {
-					squares[k + 9].wi.add(new Data((byte) 227, true));
+					squares[k + 9].wi.add(new Data((short) 227, true));
 					if (squares[k + 9].piece > 14)
-						squares[k].wo.add(new Data((byte) 227, true));
+						squares[k].wo.add(new Data((short) 227, true));
 				}
 				else {
-					squares[k + 9].wi.add(new Data((byte) 227));
-					squares[k].wo.add(new Data((byte) 227));
+					squares[k + 9].wi.add(new Data((short) 227));
+					squares[k].wo.add(new Data((short) 227));
 				}
 				for (int i = 228; i < 236; i++) {
 					int l = k + 10 * (i - 227);
 					if (l > 80 || k % 9 >= 8 - (i - 228))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 8) {}
 				else if (squares[k + 1].piece != 0) {
-					squares[k + 1].wi.add(new Data((byte) 236, true));
+					squares[k + 1].wi.add(new Data((short) 236, true));
 					if (squares[k + 1].piece > 14)
-						squares[k].wo.add(new Data((byte) 236, true));
+						squares[k].wo.add(new Data((short) 236, true));
 				}
 				else {
-					squares[k + 1].wi.add(new Data((byte) 236));
-					squares[k].wo.add(new Data((byte) 236));
+					squares[k + 1].wi.add(new Data((short) 236));
+					squares[k].wo.add(new Data((short) 236));
 				}
 				for (int i = 237; i < 245; i++) {
 					int l = k - 8 * (i - 236);
 					if (l < 0 || k % 9 >= 8 - (i - 237))
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k - 9 < 0) {}
 				else if (squares[k - 9].piece != 0) {
-					squares[k - 9].wi.add(new Data((byte) 245, true));
+					squares[k - 9].wi.add(new Data((short) 245, true));
 					if (squares[k - 9].piece > 14)
-						squares[k].wo.add(new Data((byte) 245, true));
+						squares[k].wo.add(new Data((short) 245, true));
 				}
 				else {
-					squares[k - 9].wi.add(new Data((byte) 245));
-					squares[k].wo.add(new Data((byte) 245));
+					squares[k - 9].wi.add(new Data((short) 245));
+					squares[k].wo.add(new Data((short) 245));
 				}
 				for (int i = 246; i < 254; i++) {
 					int l = k - 10 * (i - 245);
 					if (l < 0 || k % 9 <= i - 246)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 				if (k % 9 == 0) {}
 				else if (squares[k - 1].piece != 0) {
-					squares[k - 1].wi.add(new Data((byte) 254, true));
+					squares[k - 1].wi.add(new Data((short) 254, true));
 					if (squares[k - 1].piece > 14)
-						squares[k].wo.add(new Data((byte) 254, true));
+						squares[k].wo.add(new Data((short) 254, true));
 				}
 				else {
-					squares[k - 1].wi.add(new Data((byte) 254));
-					squares[k].wo.add(new Data((byte) 254));
+					squares[k - 1].wi.add(new Data((short) 254));
+					squares[k].wo.add(new Data((short) 254));
 				}
 				for (int i = 255; i < 263; i++) {
 					int l = k + 8 * (i - 254);
 					if (l > 80 || k % 9 <= i - 255)
 						break;
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 						break;
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
 			else if (m == 171) {
 				if (k > 62) {
 					if (squares[k + 9].piece != 0) {
-						squares[k + 9].wi.add(new Data((byte) 172, true));
+						squares[k + 9].wi.add(new Data((short) 172, true));
 						if (squares[k + 9].piece > 14)
-							squares[k].wo.add(new Data((byte) 172, true));
+							squares[k].wo.add(new Data((short) 172, true));
 					}
 					else {
-						squares[k + 9].wi.add(new Data((byte) 172));
-						squares[k].wo.add(new Data((byte) 172));
+						squares[k + 9].wi.add(new Data((short) 172));
+						squares[k].wo.add(new Data((short) 172));
 					}
 				}
 				else if (k > 44) {
 					if (squares[k + 9].piece != 0) {
-						squares[k + 9].wi.add(new Data((byte) 171, true));
-						squares[k + 9].wi.add(new Data((byte) 172, true));
+						squares[k + 9].wi.add(new Data((short) 171, true));
+						squares[k + 9].wi.add(new Data((short) 172, true));
 						if (squares[k + 9].piece > 14) {
-							squares[k].wo.add(new Data((byte) 171, true));
-							squares[k].wo.add(new Data((byte) 172, true));
+							squares[k].wo.add(new Data((short) 171, true));
+							squares[k].wo.add(new Data((short) 172, true));
 						}
 					}
 					else {
-						squares[k + 9].wi.add(new Data((byte) 171));
-						squares[k].wo.add(new Data((byte) 171));
-						squares[k + 9].wi.add(new Data((byte) 172));
-						squares[k].wo.add(new Data((byte) 172));
+						squares[k + 9].wi.add(new Data((short) 171));
+						squares[k].wo.add(new Data((short) 171));
+						squares[k + 9].wi.add(new Data((short) 172));
+						squares[k].wo.add(new Data((short) 172));
 					}
 				}
 				else if (squares[k + 9].piece != 0) {
-					squares[k + 9].wi.add(new Data((byte) 171, true));
+					squares[k + 9].wi.add(new Data((short) 171, true));
 					if (squares[k + 9].piece > 14)
-						squares[k].wo.add(new Data((byte) 171, true));
+						squares[k].wo.add(new Data((short) 171, true));
 				}
 				else {
-					squares[k + 9].wi.add(new Data((byte) 171));
-					squares[k].wo.add(new Data((byte) 171));
+					squares[k + 9].wi.add(new Data((short) 171));
+					squares[k].wo.add(new Data((short) 171));
 				}
 			}
 			else {
@@ -1901,18 +1907,19 @@ public class Shogi {
 					int l = k - trans[i];
 					if (l < 0 || l > 80 || ((i == 264 || i == 265) && l % 9 == 8) || ((i == 267 || i == 268) && l % 9 == 0)) {}
 					else if (squares[l].piece != 0) {
-						squares[l].wi.add(new Data((byte) i, true));
+						squares[l].wi.add(new Data((short) i, true));
 						if (squares[l].piece > 14)
-							squares[k].wo.add(new Data((byte) i, true));
+							squares[k].wo.add(new Data((short) i, true));
 					}
 					else {
-						squares[l].wi.add(new Data((byte) i));
-						squares[k].wo.add(new Data((byte) i));
+						squares[l].wi.add(new Data((short) i));
+						squares[k].wo.add(new Data((short) i));
 					}
 				}
 			}
 		}
 		//need to redo moves for relevant rooks, bishops, and lancers
+		numberOfMoves++;
 		return true;
 	}
 	public void updateTable(String move) {
