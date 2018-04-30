@@ -337,9 +337,11 @@ public class Shogi {
 		//1,  3,  5,  7,  8,  9,  11,  13,   2,   4,   6,  10,  12,  14,           1,3,5,7,9,11,13
 		//l,  n,  s,  g,  k,  r,   b,   p,   L,   N,   G,   R,   B,   T, drops for l,n,s,g,r,b,p
 		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
+		boolean d = false;
 		byte index = (byte) (move / 276);
+		short m = (short) (move % 276);
 		if (numberOfMoves % 2 == 0) {
-			short m = (short) (move % 276);	
+			//black's move
 			if (m < 269) {
 				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
 					return false;	
@@ -380,6 +382,45 @@ public class Shogi {
 							}
 					}
 					squares[k].wo.clear();
+					if (temp2 == 13 && squares[87].piece > 0) {
+						//enable white pawn drops on that column
+						for (int i = k; i < 72; i += 9) {
+							if (squares[i + 9].piece == 8) {
+								boolean c = true;
+								for (int j = 0; j < squares[i].bi.size(); j++)
+									if (squares[i].bi.get(j).move < 269) {
+										c = false;
+										break;
+									}
+								if (!c || squares[i + 9].bo.size() != 0) {
+									if (squares[i].piece != 0)
+										squares[i].wi.add(new Data((short) 275, true));
+									else squares[i].wi.add(new Data((short) 275));
+								}
+							}
+							else if (squares[i].piece != 0)
+								squares[i].wi.add(new Data((short) 275, true));
+							else squares[i].wi.add(new Data((short) 275));
+						}
+						for (int i = k; i > 0; i -= 9) {
+							if (squares[i + 9].piece == 8) {
+								boolean c = true;
+								for (int j = 0; j < squares[i].bi.size(); j++)
+									if (squares[i].bi.get(j).move < 269) {
+										c = false;
+										break;
+									}
+								if (!c || squares[i + 9].bo.size() != 0) {
+									if (squares[i].piece != 0)
+										squares[i].wi.add(new Data((short) 275, true));
+									else squares[i].wi.add(new Data((short) 275));
+								}
+							}
+							else if (squares[i].piece != 0)
+								squares[i].wi.add(new Data((short) 275, true));
+							else squares[i].wi.add(new Data((short) 275));
+						}
+					}
 				}
 				//making the move
 				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172)
@@ -401,11 +442,19 @@ public class Shogi {
 					squares[index].wi.get(i).blocked = false;
 				//incoming captured piece
 				if (!b) {
-					boolean c = true;
 					if (squares[81 + (temp2 - 1) / 2].piece++ == 0) {
 						if (temp2 > 12)
 							for (int i = 9; i < 81; i++) {
-								if (squares[i - 9].piece == 8) {
+								boolean c = true;
+								for (int j = i; j < 81; j += 9) //slow way to check for other pawns on same column
+									if (squares[j].piece == 27)
+										c = false;
+								for (int j = i; j >= 0; j -= 9)
+									if (squares[j].piece == 27)
+										c = false;
+								if (!c) {}
+								else if (squares[i - 9].piece == 8) {
+									c = true;
 									for (int j = 0; j < squares[i].wi.size(); j++)
 										if (squares[i].wi.get(j).move < 269) {
 											c = false;
@@ -457,6 +506,7 @@ public class Shogi {
 								squares[i].bi.remove(j);
 								break;
 							}
+				d = true;
 			}
 			//adding all legal moves
 			int k = index;
@@ -1127,7 +1177,6 @@ public class Shogi {
 		}
 		else {
 			//white's move
-			short m = (short) (move % 276);	
 			if (m < 269) {
 				if (squares[index].wo.isEmpty() || squares[index].piece > 14 || squares[index].piece == 0)
 					return false;		
@@ -1168,6 +1217,45 @@ public class Shogi {
 							}
 					}
 					squares[k].bo.clear();
+					if (temp2 == 27 && squares[94].piece > 0) {
+						//enable black pawn drops on that column
+						for (int i = k; i < 81; i += 9) {
+							if (squares[i - 9].piece == 8) {
+								boolean c = true;
+								for (int j = 0; j < squares[i].wi.size(); j++)
+									if (squares[i].wi.get(j).move < 269) {
+										c = false;
+										break;
+									}
+								if (!c || squares[i - 9].wo.size() != 0) {
+									if (squares[i].piece != 0)
+										squares[i].bi.add(new Data((short) 275, true));
+									else squares[i].bi.add(new Data((short) 275));
+								}
+							}
+							else if (squares[i].piece != 0)
+								squares[i].bi.add(new Data((short) 275, true));
+							else squares[i].bi.add(new Data((short) 275));
+						}
+						for (int i = k; i > 8; i -= 9) {
+							if (squares[i - 9].piece == 8) {
+								boolean c = true;
+								for (int j = 0; j < squares[i].wi.size(); j++)
+									if (squares[i].wi.get(j).move < 269) {
+										c = false;
+										break;
+									}
+								if (!c || squares[i - 9].wo.size() != 0) {
+									if (squares[i].piece != 0)
+										squares[i].bi.add(new Data((short) 275, true));
+									else squares[i].bi.add(new Data((short) 275));
+								}
+							}
+							else if (squares[i].piece != 0)
+								squares[i].bi.add(new Data((short) 275, true));
+							else squares[i].bi.add(new Data((short) 275));
+						}
+					}
 				}
 				//making the move
 				if ((m > 6 && m < 15) || m == 17 || m == 18 || (m > 23 && m < 29) || (m > 74 && m < 107) || (m > 138 && m < 171) || m == 172)
@@ -1189,11 +1277,19 @@ public class Shogi {
 					squares[index].wi.get(i).blocked = false;
 				//incoming captured piece
 				if (!b) {
-					boolean c = true;
 					if (squares[81 + (temp2 - 1) / 2].piece++ == 0) {
 						if (temp2 > 26)
 							for (int i = 0; i < 72; i++) {
-								if (squares[i + 9].piece == 8) {
+								boolean c = true;
+								for (int j = i; j < 81; j += 9) //slow way to check for other pawns on same column
+									if (squares[j].piece == 13)
+										c = false;
+								for (int j = i; j >= 0; j -= 9)
+									if (squares[j].piece == 13)
+										c = false;
+								if (!c) {}
+								else if (squares[i + 9].piece == 8) {
+									c = true;
 									for (int j = 0; j < squares[i].bi.size(); j++)
 										if (squares[i].bi.get(j).move < 269) {
 											c = false;
@@ -1245,6 +1341,7 @@ public class Shogi {
 								squares[i].wi.remove(j);
 								break;
 							}
+				d = true;
 			}
 			//adding all legal moves
 			int k = index;
@@ -1914,6 +2011,40 @@ public class Shogi {
 			}
 		}
 		//need to redo moves for relevant rooks, bishops, and lancers
+		int k = index;
+		for (int i = 0; i < squares[k].bi.size(); i++) {
+			Data x = squares[k].bi.get(i);
+			if (x.move < 15) {
+				
+			}
+			
+		}
+		for (int i = 0; i < squares[k].wi.size(); i++) {
+			Data x = squares[k].wi.get(i);
+			if (x.move < 15) {
+				
+			}
+			
+		}
+		if (!d) {
+			if (numberOfMoves % 2 == 0)
+				k += trans[m];
+			else k -= trans[m];
+			for (int i = 0; i < squares[k].bi.size(); i++) {
+				Data x = squares[k].bi.get(i);
+				if (x.move < 15) {
+					
+				}
+				
+			}
+			for (int i = 0; i < squares[k].wi.size(); i++) {
+				Data x = squares[k].wi.get(i);
+				if (x.move < 15) {
+					
+				}
+				
+			}
+		}
 		numberOfMoves++;
 		return true;
 	}
