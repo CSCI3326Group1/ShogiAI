@@ -328,7 +328,8 @@ public class Shogi {
 		//for example: move = "S72x83+"
 		//this means the player with the current turn moves their silver general from column 7, row 2 to capture on column 8, row 3
 		//lastly, the player chose to promote it
-		short array1 [] = {15351, 7071, 12867, 9555, 21286, 862, 10383, 5415, 17710, 5519, 7790, 5691, 20443, 12039, 17007, 4462, 17111, 14412};
+		short array1 [] = {15351, 7071, 12867, 9555, 21286, 862, 10383, 5415, 17710, 5519, 7790, 5691, 20443, 12039, 17007, 4462, 17111, 14412,
+				           16731, 1679, 15903, 6519};
 		return array1[numberOfMoves];
 	}
 	public void blackLance(int k) {
@@ -1284,15 +1285,20 @@ public class Shogi {
 		//1,  3,  5,  7,  8,  9,  11,  13,   2,   4,   6,  10,  12,  14,           1,3,5,7,9,11,13
 		//l,  n,  s,  g,  k,  r,   b,   p,   L,   N,   G,   R,   B,   T, drops for l,n,s,g,r,b,p
 		//0, 15, 19, 29, 35, 43, 107, 171, 173, 179, 185, 191, 227, 263, 269
-		boolean d = false;
+		boolean a = false, d = false;
 		byte index = (byte) (move / 276);
 		short m = (short) (move % 276);
 		if (numberOfMoves % 2 == 0) {
 			//black's move
+			for (int i = 0; i < squares[squares[96].piece].wi.size(); i++)
+				if (squares[squares[96].piece].wi.get(i).move < 269) {
+					a = true;
+					break;
+				}
+			if (a) {
+				//king must be saved
+			}
 			if (m < 269) {
-				for (int i = 0; i < squares[squares[96].piece].wi.size(); i++)
-					if (squares[squares[96].piece].wi.get(i).move < 269 && squares[index].piece != 22)
-						return false;
 				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
 					return false;	
 				int k = index + trans[m];
@@ -1441,7 +1447,7 @@ public class Shogi {
 				boolean c = squares[index].bi.removeIf((Data item)->item.move == m && item.blocked == false);
 				if (!c)
 					return false;
-				if (--squares[m - 188].piece == 0)
+				if (--squares[m - 181].piece == 0)
 					for (int i = 0; i < 81; i++)
 						for (int j = 0; j < squares[i].bi.size(); j++)
 							if (squares[i].bi.get(j).move == m) {
@@ -1668,10 +1674,15 @@ public class Shogi {
 		}
 		else {
 			//white's move
+			for (int i = 0; i < squares[squares[95].piece].bi.size(); i++)
+				if (squares[squares[95].piece].wi.get(i).move < 269 && squares[index].piece != 8) {
+					a = true;
+					break;
+				}
+			if (a) {
+				//king must be saved
+			}
 			if (m < 269) {
-				for (int i = 0; i < squares[squares[95].piece].bi.size(); i++)
-					if (squares[squares[95].piece].wi.get(i).move < 269 && squares[index].piece != 8)
-						return false;
 				if (squares[index].wo.isEmpty() || squares[index].piece > 14 || squares[index].piece == 0)
 					return false;		
 				int k = index - trans[m];
@@ -1820,14 +1831,13 @@ public class Shogi {
 				boolean c = squares[index].wi.removeIf((Data item)->item.move == m && item.blocked == false);
 				if (!c)
 					return false;
-				if (--squares[m - 181].piece == 0)
+				if (--squares[m - 188].piece == 0)
 					for (int i = 0; i < 81; i++)
 						for (int j = 0; j < squares[i].wi.size(); j++)
 							if (squares[i].wi.get(j).move == m) {
 								squares[i].wi.remove(j);
 								break;
 							}
-				
 				squares[index].piece = (byte) (2 * m - 537);
 				d = true;
 			}
@@ -2262,6 +2272,100 @@ public class Shogi {
 	}
 	public boolean gameOver() {
 		//returns true when the game is over
+		boolean b = false;
+		boolean c = false;
+		int k = 0;
+		if (numberOfMoves % 2 == 1) {
+			int index = squares[96].piece;
+			for (int i = 0; i < squares[index].wi.size(); i++)
+				if (squares[index].wi.get(i).move < 269) {
+					b = true;
+					k = index + trans[squares[index].wi.get(i).move];
+					break;
+				}
+			if (b) {
+				if (index % 9 == k % 9) {
+					//same column
+					if (index - 18 >= k) {
+						
+					}
+					else if (k - 18 >= index) {
+						
+					}
+				}
+				else if (index / 9 == k / 9) {
+					//same row
+					if (index - 2 >= k) {
+						
+					}
+					else if (k - 2 >= index) {
+						
+					}
+				}
+				else if ((index - k) % 10 == 0 && index / 9 + k % 9 == k / 9 + index % 9) {
+					if (index - 20 >= k) {
+						
+					}
+					else if (k - 20 >= index) {
+						
+					}
+				}
+				else if ((index - k) % 8 == 0 && index / 9 + index % 9 == k / 9 + k % 9) {
+					if (index - 16 >= k) {
+						
+					}
+					else if (k - 16 >= index) {
+						
+					}
+				}
+			}
+			
+		}
+		else {
+			int index = squares[95].piece;
+			for (int i = 0; i < squares[index].bi.size(); i++)
+				if (squares[index].bi.get(i).move < 269) {
+					b = true;
+					k = index - trans[squares[index].bi.get(i).move];
+					break;
+				}
+			if (b) {
+				if (index % 9 == k % 9) {
+					//same column
+					if (index - 18 >= k) {
+						
+					}
+					else if (k - 18 >= index) {
+						
+					}
+				}
+				else if (index / 9 == k / 9) {
+					//same row
+					if (index - 2 >= k) {
+						
+					}
+					else if (k - 2 >= index) {
+						
+					}
+				}
+				else if ((index - k) % 10 == 0 && index / 9 + k % 9 == k / 9 + index % 9) {
+					if (index - 20 >= k) {
+						
+					}
+					else if (k - 20 >= index) {
+						
+					}
+				}
+				else if ((index - k) % 8 == 0 && index / 9 + index % 9 == k / 9 + k % 9) {
+					if (index - 16 >= k) {
+						
+					}
+					else if (k - 16 >= index) {
+						
+					}
+				}
+			}
+		}
 		return false;
 	}
 }
