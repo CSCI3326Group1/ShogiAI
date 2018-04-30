@@ -2229,7 +2229,7 @@ public class Shogi {
 		if(numberOfMoves > table.length)
 			resizeTable(table);
 		else
-			table[numberOfMoves] = move;
+			table[numberOfMoves - 1] = move;
 		
 	}
 	public void resizeTable(String[] table)
@@ -2262,7 +2262,7 @@ public class Shogi {
 		System.out.println(" ________________________");
 		System.out.println("|\t" + time1 + " " + time2 + "|");
 		System.out.println("|________________________|");
-		for(int i = 0; i < numberOfMoves/2; i++)
+		for(int i = 0; i < (numberOfMoves + 1)/2; i++)
 		{
 			System.out.println("|" + (i+1)+ ".\t" + table[blackMove] + "\t " + table[whiteMove] + "\t |");
 			blackMove += 2;
