@@ -343,6 +343,9 @@ public class Shogi {
 		if (numberOfMoves % 2 == 0) {
 			//black's move
 			if (m < 269) {
+				for (int i = 0; i < squares[squares[96].piece].wi.size(); i++)
+					if (squares[squares[96].piece].wi.get(i).move < 269 && squares[index].piece != 22)
+						return false;
 				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
 					return false;	
 				int k = index + trans[m];
@@ -1178,6 +1181,9 @@ public class Shogi {
 		else {
 			//white's move
 			if (m < 269) {
+				for (int i = 0; i < squares[squares[95].piece].bi.size(); i++)
+					if (squares[squares[95].piece].wi.get(i).move < 269 && squares[index].piece != 8)
+						return false;
 				if (squares[index].wo.isEmpty() || squares[index].piece > 14 || squares[index].piece == 0)
 					return false;		
 				int k = index - trans[m];
@@ -2010,7 +2016,7 @@ public class Shogi {
 				}
 			}
 		}
-		//need to redo moves for relevant rooks, bishops, and lancers
+		//need to check moves for relevant rooks, bishops, and lancers
 		int k = index;
 		for (int i = 0; i < squares[k].bi.size(); i++) {
 			Data x = squares[k].bi.get(i);
