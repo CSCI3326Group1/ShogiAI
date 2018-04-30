@@ -344,14 +344,9 @@ public class Shogi {
 				if (squares[index].bo.isEmpty() || squares[index].piece < 15)
 					return false;	
 				int k = index + trans[m];
-				System.out.println("test1");
 				boolean b = squares[index].bo.removeIf((Data item)->item.move == m && (item.blocked == false || (squares[k].piece < 15 && squares[k].piece != 0)));
-				for (int i = 0; i < squares[index].bo.size(); i++)
-					System.out.println(squares[index].bo.get(i).move);
-				System.out.println((short) 128);
 				if (!b)
 					return false;
-				System.out.println("test2");
 				byte temp = squares[index].piece;
 				squares[index].piece = 0;
 				//remove the incoming moves on affected squares
